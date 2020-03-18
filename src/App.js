@@ -1,15 +1,22 @@
 import React from 'react';
 import './App.css';
+import { ThemeProvider } from "@material-ui/styles";
+import { PageHeader } from './components/page-header/PageHeader';
+import { CssBaseline } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core';
 
-function App() {
+const theme = createMuiTheme({
+  palette: {
+    type: "dark"
+  }
+});
+
+const App = ()  => {
   return (
-    <div className="app">
-      <header className="app-header">
-        <span className="title">Christian Siber</span>
-      </header>
-
-      <div>Soon ...</div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <PageHeader />
+    </ThemeProvider>
   );
 }
 
