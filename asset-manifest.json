@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/csiber.at/static/css/main.28d81ad8.chunk.css",
+    "main.js": "/csiber.at/static/js/main.8d00939a.chunk.js",
+    "main.js.map": "/csiber.at/static/js/main.8d00939a.chunk.js.map",
+    "runtime-main.js": "/csiber.at/static/js/runtime-main.5ffab268.js",
+    "runtime-main.js.map": "/csiber.at/static/js/runtime-main.5ffab268.js.map",
+    "static/js/2.569ef0cc.chunk.js": "/csiber.at/static/js/2.569ef0cc.chunk.js",
+    "static/js/2.569ef0cc.chunk.js.map": "/csiber.at/static/js/2.569ef0cc.chunk.js.map",
+    "index.html": "/csiber.at/index.html",
+    "precache-manifest.941abbae2b802702342b9c0b0744049e.js": "/csiber.at/precache-manifest.941abbae2b802702342b9c0b0744049e.js",
+    "service-worker.js": "/csiber.at/service-worker.js",
+    "static/css/main.28d81ad8.chunk.css.map": "/csiber.at/static/css/main.28d81ad8.chunk.css.map",
+    "static/js/2.569ef0cc.chunk.js.LICENSE.txt": "/csiber.at/static/js/2.569ef0cc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5ffab268.js",
+    "static/js/2.569ef0cc.chunk.js",
+    "static/css/main.28d81ad8.chunk.css",
+    "static/js/main.8d00939a.chunk.js"
+  ]
+}
