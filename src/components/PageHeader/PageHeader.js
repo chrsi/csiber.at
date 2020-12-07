@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Link, makeStyles, useMediaQuery, useTheme } from '@material-ui/core';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import './PageHeader.css';
-import BurgerMenu from './BurgerMenu';
 
 const useStyles = makeStyles(theme => ({
   links:  {

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { ThemeProvider } from "@material-ui/styles";
-import PageHeader from './components/page-header/PageHeader';
+import PageHeader from './components/PageHeader/PageHeader';
 import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core';
 
