@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.ec9ab13a.chunk.css",
+    "main.css": "/static/css/main.cbbb618c.chunk.css",
     "main.js": "/static/js/main.2f08be9b.chunk.js",
     "main.js.map": "/static/js/main.2f08be9b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3967187a.js",
@@ -8,7 +8,7 @@
     "static/js/2.1c98affb.chunk.js": "/static/js/2.1c98affb.chunk.js",
     "static/js/2.1c98affb.chunk.js.map": "/static/js/2.1c98affb.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ec9ab13a.chunk.css.map": "/static/css/main.ec9ab13a.chunk.css.map",
+    "static/css/main.cbbb618c.chunk.css.map": "/static/css/main.cbbb618c.chunk.css.map",
     "static/js/2.1c98affb.chunk.js.LICENSE.txt": "/static/js/2.1c98affb.chunk.js.LICENSE.txt",
     "static/media/bryce-canyon.dfa1660e.jpg": "/static/media/bryce-canyon.dfa1660e.jpg",
     "static/media/devto_ill2.5e48624c.svg": "/static/media/devto_ill2.5e48624c.svg",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.3967187a.js",
     "static/js/2.1c98affb.chunk.js",
-    "static/css/main.ec9ab13a.chunk.css",
+    "static/css/main.cbbb618c.chunk.css",
     "static/js/main.2f08be9b.chunk.js"
   ]
 }
