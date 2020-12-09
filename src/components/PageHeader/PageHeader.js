@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default () => {
+const PageHeader =  () => {
   const [isNavOpen, openNav] = useState(false);
   const classes = useStyles()
   const theme = useTheme();
@@ -25,7 +25,7 @@ export default () => {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Toolbar>
         <nav className={`nav-bar ${isMobile ? 'mobile' : ''}`}>
           <div className="logo">
@@ -44,3 +44,5 @@ export default () => {
      </AppBar>
   )
 }
+
+export default PageHeader

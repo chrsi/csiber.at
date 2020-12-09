@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import './BurgerMenu.css';
 
-export default (props) => {
+const BurgerMenu = (props) => {
   const [isActive, setActive] = useState(false);
 
   const toggleMenu = () => {
@@ -17,3 +17,5 @@ export default (props) => {
     </span>
   );
 }
+
+export default BurgerMenu

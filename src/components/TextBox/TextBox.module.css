@@ -1,0 +1,12 @@
+.textArea:first-child {
+  margin-top: 0;
+}
+
+.textArea:last-child {
+  margin-bottom: 0;
+}
+
+.textArea {
+  max-width: var(--content-max-width);
+  padding: 80px 0
+}

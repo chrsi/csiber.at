@@ -4,6 +4,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import PageHeader from './components/PageHeader/PageHeader';
 import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core';
+import About from './pages/About/About';
 
 const theme = createMuiTheme({
   palette: {
@@ -16,6 +17,7 @@ const App = ()  => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <PageHeader />
+      <About></About>
     </ThemeProvider>
   );
 }
