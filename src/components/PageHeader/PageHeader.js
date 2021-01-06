@@ -5,7 +5,6 @@ import './PageHeader.css';
 
 const useStyles = makeStyles(theme => ({
   links:  {
-    backgroundColor: theme.palette.background.default,
     '& *': {
       [theme.breakpoints.down('xs')]: {
         fontSize: theme.typography.h4.fontSize
@@ -34,10 +33,8 @@ const PageHeader =  () => {
       <Toolbar>
         <nav className={`nav-bar ${isMobile ? 'mobile' : ''}`}>
           <div className="logo">
-            <Link color="inherit" href="#">
+            <Link color="inherit" href="#" variant="h6">
               Christian Siber
-              <br/>
-              Logo
             </Link>
           </div>
             <ul className={`links ${classes.links} ${isNavOpen ? 'open' : 'closed'} navlinks`}>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { useAboutTypography } from 'pages/About/About';
+import classes from './Intro.module.css';
 
 const Intro = () => {
   const aboutTypography = useAboutTypography();
 
   return (
-    <section>
+    <section className={classes.container}>
       <h2 className={aboutTypography.headline}>👋 Hi there,</h2>
       <Typography variant="body1" paragraph={true}>
         my name is Christian and I'm a software developer from Mondsee (Austria) currently living in Vienna.
