@@ -29,11 +29,11 @@ const TextBox = props => {
 
   return (
     <React.Fragment>
-      <TextBoxSeparator top height={`${height}px`}></TextBoxSeparator>
+      <TextBoxSeparator top height={height}></TextBoxSeparator>
       <div className={`${styles.textArea} ${classes.textArea}`}>
         { props.children }
       </div>
-      <TextBoxSeparator bottom height={`${height}px`}></TextBoxSeparator>
+      <TextBoxSeparator bottom height={height}></TextBoxSeparator>
     </React.Fragment>
   );
 };

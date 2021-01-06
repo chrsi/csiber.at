@@ -5,13 +5,13 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   separator: props => ({
-    height: props.height
+    height: `${props.height}px`
   }),
   top: props => ({
-    top: `-${props.height}`
+    top: `-${props.height}px`
   }),
   bottom: props => ({
-    bottom: `-${props.height}`
+    bottom: `-${props.height}px`
   }),
   primary: {
     fill: theme.palette.background.default
@@ -41,7 +41,7 @@ const TextBoxSeparator = props => {
 TextBoxSeparator.propTypes = {
   top: PropTypes.bool,
   bottom: PropTypes.bool,
-  height: PropTypes.string
+  height: PropTypes.number
 };
 
 export default TextBoxSeparator;
