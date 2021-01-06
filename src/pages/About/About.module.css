@@ -1,9 +1,13 @@
 .parallaxPlaceholder {
-  height: 600px;
+  height: 800px;
 }
 
 .bryceCanyon {
   transform: translateX(0);
+}
+
+.separatorImages {
+  min-width: 100vw;
 }
 
 @media screen and (min-width: 0px) and (max-width: 800px) {

@@ -4,7 +4,7 @@ import TextBox from 'components/TextBox/TextBox';
 import Intro from 'components/Intro/Intro';
 import AboveTheFold from 'components/AboveTheFold/AboveTheFold';
 
-import bryceCanyon from 'assets/images/bryce-canyon.jpg';
+import bryceCanyon from 'assets/images/bryce.jpg';
 import classes from './About.module.css';
 import { makeStyles } from '@material-ui/core';
 
@@ -28,7 +28,7 @@ const About = () => {
       </TextBox>
       <Parallax bgImageAlt="Me at the Bryce Canyon" strength={-300}>
         <Background>
-          <img src={bryceCanyon} className={classes.bryceCanyon} alt="Bryce Canyon"></img>
+          <img src={bryceCanyon} className={`${classes.bryceCanyon} ${classes.separatorImages}`} alt="Bryce Canyon"></img>
         </Background>
         <div className={classes.parallaxPlaceholder}></div>
       </Parallax>
