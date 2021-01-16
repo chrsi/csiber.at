@@ -6,7 +6,7 @@ import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core';
 import About from './pages/About/About';
 import Skills from './pages/Skills/Skills';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
