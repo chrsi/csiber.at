@@ -3,7 +3,7 @@
     "name": "Vuzzler",
     "description": "Your digital foosbal companion",
     "url": "https://www.vuzzler.com",
-    "stack": ["csharp", "js", "css", "vue", "vuex", "signalr", "indesign", "illustrator", "ef", "cordova", "storyblok", "azure-ai", "vuetify", "firebase", "sqlserver", "material", "pwa", "azure-appservice", "devops"],
+    "stack": ["csharp", "js", "css", "vue", "vuex", "signalr", "indesign", "illustrator", "ef", "cordova", "storyblok", "azure-ai", "vuetify", "firebase", "sqlserver", "material", "pwa", "azure-appservice", "azure-devops"],
     "teamSize": 1
   },
   {
@@ -25,14 +25,14 @@
     "description": "A global IoT solution that connects medical devices like implant systems and sterilizers. The devices can be monitored and controlled via a web/mobile application to support dentists and service technicians in their daily business.",
     "company": "dataformers GmbH",
     "url": "https://www.wh.com/en_global/dental-solutions/iodent",
-    "stack": ["csharp", "ts", "angular", "angular-material", "azure-cosmosdb", "sqlserver", "azure-ai", "azure-ad", "azure-adb2c", "azure-storage", "azure-appservice", "devops", "sass", "rxjs"],
+    "stack": ["csharp", "ts", "angular", "angular-material", "azure-cosmosdb", "sqlserver", "azure-ai", "azure-ad", "azure-adb2c", "azure-storage", "azure-appservice", "azure-devops", "sass", "rxjs", "aspnetcore-webapi"],
     "teamSize": 6
   },
   {
     "name": "Hospital Ticketing System",
     "description": "A public ticketing system that lets users report concerns, danger points or malfunctions on the hospital area to the according administration.",
     "company": "dataformers GmbH",
-    "stack": ["csharp", "devops", "aspnetcore-webapi", "azure-appservice", "azure-appgateway", "azure-storage", "sqlserver", "bootstrap", "aspnetcore-mvc", "js", "css"],
+    "stack": ["csharp", "azure-devops", "aspnetcore-webapi", "azure-appservice", "azure-appgateway", "azure-storage", "sqlserver", "bootstrap", "aspnetcore-mvc", "js", "css"],
     "teamSize": 1
   },
   {

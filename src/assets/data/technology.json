@@ -1,0 +1,162 @@
+{
+  "csharp": {
+    "name": "C#",
+    "category": "Language"
+  },
+  "js": {
+    "name": "Javascript",
+    "category": "Language"
+  },
+  "css": {
+    "name": "CSS",
+    "category": "Language"
+  },
+  "vue": {
+    "name": "Vue",
+    "category": "Framework"
+  },
+  "vuex": {
+    "name": "Vuex",
+    "category": "Library"
+  },
+  "signalr": {
+    "name": "SignalR",
+    "category": "Library"
+  },
+  "indesign": {
+    "name": "Adobe InDesign",
+    "category": "Tool"
+  },
+  "illustrator": {
+    "name": "Adobe Illustrator",
+    "category": "Tool"
+  },
+  "ef": {
+    "name": "Entity Framework",
+    "category": "Framework"
+  },
+  "cordova": {
+    "name": "Apache Cordova",
+    "category": "Framework"
+  },
+  "storyblok": {
+    "name": "StoryBlok",
+    "category": "Service"
+  },
+  "azure-ai": {
+    "name": "Azure ApplicationInsights",
+    "category": "Service"
+  },
+  "vuetify": {
+    "name": "Vuetify",
+    "category": "Component Library"
+  },
+  "firebase": {
+    "name": "Firebase",
+    "category": "Platform"
+  },
+  "sqlserver": {
+    "name": "Microsoft Sql Server",
+    "category": "Database"
+  },
+  "material": {
+    "name": "Material",
+    "category": "Specification"
+  },
+  "pwa": {
+    "name": "Progressive Web Apps",
+    "category": "Specification"
+  },
+  "azure-appservice": {
+    "name": "Azure App Service",
+    "category": "Cloud"
+  },
+  "azure-devops": {
+    "name": "Azure DevOps",
+    "category": "Tool"
+  },
+  "react": {
+    "name": "React",
+    "category": "Framework"
+  },
+  "photoshop": {
+    "name": "Adobe Photoshop",
+    "category": "Tool"
+  },
+  "mui": {
+    "name": "Material-UI",
+    "category": "Library"
+  },
+  "webpack": {
+    "name": "Webpack",
+    "category": "Tool"
+  },
+  "jest": {
+    "name": "Jest",
+    "category": "Test"
+  },
+  "angular": {
+    "name": "Angular",
+    "category": "Framework"
+  },
+  "angular-material": {
+    "name": "Angular Material",
+    "category": "Library"
+  },
+  "azure-cosmosdb": {
+    "name": "Azure CosmosDb",
+    "category": "Database"
+  },
+  "azure-ad": {
+    "name": "Azure Active Directory",
+    "category": "Service"
+  },
+  "azure-adb2c": {
+    "name": "Azure Active Directory B2C",
+    "category": "Framework"
+  },
+  "azure-storage": {
+    "name": "Azure Storage",
+    "category": "Database"
+  },
+  "sass": {
+    "name": "SASS",
+    "category": "Language"
+  },
+  "rxjs": {
+    "name": "RxJS",
+    "category": "Library"
+  },
+  "aspnetcore-webapi": {
+    "name": "ASP.NET Core WebApi",
+    "category": "Framework"
+  },
+  "azure-appgateway": {
+    "name": "Azure App Gateway",
+    "category": "Service"
+  },
+  "bootstrap": {
+    "name": "Bootstrap",
+    "category": "Library"
+  },
+  "aspnetcore-mvc": {
+    "name": "ASP.NET Core MVC",
+    "category": "Framework"
+  },
+  "ts": {
+    "name": "Typescript",
+    "category": "Language"
+  },
+  "antd": {
+    "name": "Ant Design",
+    "category": "Library"
+  },
+  "less": {
+    "name": "less",
+    "category": "Library"
+  },
+  "xamarin": {
+    "name": "Xamarin",
+    "category": "Framework"
+  }
+}

@@ -5,6 +5,7 @@ import SkillCloud from 'components/SkillCloud/SkillCloud';
 import ProjectList from 'components/ProjectList/ProjectList';
 import Typography from '@material-ui/core/Typography';
 import { Icon, makeStyles } from '@material-ui/core';
+import { getTechName } from 'utils/Technology';
 
 const useStyles = makeStyles(theme => ({
   badgeColor: () => ({
@@ -34,7 +35,7 @@ const Skills = () => {
           <section className={classes.header}>
             <Typography display="inline" variant="h4" component="h1" className={classes.preText}>Projects with: </Typography>
             <span className={`${classes.skillBadge} ${styles.badgeColor}`}>
-              <code>{selectedSkill}</code>
+              <code>{getTechName(selectedSkill)}</code>
             </span>
           </section>
 

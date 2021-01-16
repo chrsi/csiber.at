@@ -29,9 +29,10 @@ const PageHeader =  () => {
     openNav(!isNavOpen)
   }
 
-  const HeaderLink = React.forwardRef((props, ref) => (
-    <ReactLink underline="none" color="inherit" {...props}>{props.children}</ReactLink>
-  ))
+  const HeaderLink = React.forwardRef((props, _) => {
+    const { navigate, ...reactLinkProps } = props;
+    return (<ReactLink underline="none" color="inherit" {...reactLinkProps}>{props.children}</ReactLink>)
+  })
 
   return (
     <AppBar position="sticky" elevation={trigger ? 4 : 0} color={trigger ? 'default' : 'transparent'}>
