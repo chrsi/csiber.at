@@ -1,0 +1,23 @@
+.project {
+  margin: 16px 0;
+}
+
+.additionalInfo {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.additionalInfo>* {
+  vertical-align: middle;
+}
+
+.infoIcon {
+  margin-right: 1rem;
+}
+
+.link {
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

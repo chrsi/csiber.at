@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Vuzzler",
+    "description": "Your digital foosbal companion",
+    "url": "https://www.vuzzler.com",
+    "stack": ["csharp", "js", "css", "vue", "vuex", "signalr", "indesign", "illustrator", "ef", "cordova", "storyblok", "azure-ai", "vuetify", "firebase", "sqlserver", "material", "pwa", "azure-appservice", "devops"],
+    "teamSize": 1
+  },
+  {
+    "name": "csiber.at",
+    "description": "My personal website",
+    "url": "https://www.csiber.at",
+    "stack": ["react", "css", "photoshop", "mui"],
+    "teamSize": 1
+  },
+  {
+    "name": "Audible",
+    "description": "Enables staged deployments for vue applications.",
+    "repository": "https://github.com/chrsi/audible",
+    "stack": ["js", "webpack", "vue", "jest"],
+    "teamSize": 1
+  },
+  {
+    "name": "W&H ioDent",
+    "description": "A global IoT solution that connects medical devices like implant systems and sterilizers. The devices can be monitored and controlled via a web/mobile application to support dentists and service technicians in their daily business.",
+    "company": "dataformers GmbH",
+    "url": "https://www.wh.com/en_global/dental-solutions/iodent",
+    "stack": ["csharp", "ts", "angular", "angular-material", "azure-cosmosdb", "sqlserver", "azure-ai", "azure-ad", "azure-adb2c", "azure-storage", "azure-appservice", "devops", "sass", "rxjs"],
+    "teamSize": 6
+  },
+  {
+    "name": "Hospital Ticketing System",
+    "description": "A public ticketing system that lets users report concerns, danger points or malfunctions on the hospital area to the according administration.",
+    "company": "dataformers GmbH",
+    "stack": ["csharp", "devops", "aspnetcore-webapi", "azure-appservice", "azure-appgateway", "azure-storage", "sqlserver", "bootstrap", "aspnetcore-mvc", "js", "css"],
+    "teamSize": 1
+  },
+  {
+    "name": "Navigation App",
+    "description": "Calculate the shortest routes to efficiently navigate between various locations in the hospital area. Employees and visotors can use it to find the best way to their desired station.",
+    "company": "dataformers GmbH",
+    "stack": ["csharp", "aspnetcore-webapi"],
+    "teamSize": 1
+  },
+  {
+    "name": "Template Project",
+    "description": "A template project that provides the basis for all future web applications. It scaffolds a dotnet backend project with a react frontend that supports the two main authentication mechanisms. It also contains a component library for reusable react components that adhere to the corporate identity specifications.",
+    "company": "dataformers GmbH",
+    "stack": ["react", "ts", "antd", "webpack", "aspnetcore-webapi", "css", "less"],
+    "teamSize": 2
+  },
+  {
+    "name": "Hospital Bed Statistics",
+    "description": "An internal mobile application for hospitals that displays the number of beds currently occupied, reserverd or free to use. It was later rewritten into a PWA.",
+    "company": "dataformers GmbH",
+    "stack": ["xamarin", "csharp", "angular", "pwa", "angular-material", "css", "ts"],
+    "teamSize": 2
+  },
+  {
+    "name": "Hospital Waiting Times Statistics",
+    "description": "An internal mobile application for hospitals that displays statistics and details about the waiting times at various stations. It was later rewritten into a PWA.",
+    "company": "dataformers GmbH",
+    "stack": ["xamarin", "csharp", "angular", "pwa", "angular-material", "css", "ts"],
+    "teamSize": 2
+  }
+]

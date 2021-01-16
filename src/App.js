@@ -5,6 +5,8 @@ import PageHeader from './components/PageHeader/PageHeader';
 import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core';
 import About from './pages/About/About';
+import Skills from './pages/Skills/Skills';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
@@ -16,8 +18,17 @@ const App = ()  => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <PageHeader />
-      <About></About>
+      <Router>
+        <PageHeader />
+        <Switch>
+          <Route path="/skills">
+            <Skills></Skills>
+          </Route>
+          <Route path="/">
+            <About></About>
+          </Route>
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Link, makeStyles, useMediaQuery, useTheme, useScrollTrigger } from '@material-ui/core';
+import { AppBar, Toolbar, makeStyles, useMediaQuery, useTheme, useScrollTrigger, Link as ReactLink } from '@material-ui/core';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import './PageHeader.css';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   links:  {
@@ -28,17 +29,22 @@ const PageHeader =  () => {
     openNav(!isNavOpen)
   }
 
+  const HeaderLink = React.forwardRef((props, ref) => (
+    <ReactLink underline="none" color="inherit" {...props}>{props.children}</ReactLink>
+  ))
+
   return (
     <AppBar position="sticky" elevation={trigger ? 4 : 0} color={trigger ? 'default' : 'transparent'}>
       <Toolbar>
         <nav className={`nav-bar ${isMobile ? 'mobile' : ''}`}>
           <div className="logo">
-            <Link color="inherit" href="#" variant="h6">
+            <Link to="/" variant="h6" component={HeaderLink}>
               Christian Siber
             </Link>
           </div>
             <ul className={`links ${classes.links} ${isNavOpen ? 'open' : 'closed'} navlinks`}>
-              <li><Link underline="none" color="inherit" href="#" variant="body1">About</Link></li>
+              <li><Link to="/" variant="body1" component={HeaderLink}>About</Link></li>
+              <li><Link to="/skills" variant="body1" component={HeaderLink}>Skills</Link></li>
             </ul>
           <BurgerMenu className="menu" onChange={toggleNav}></BurgerMenu>
         </nav>
