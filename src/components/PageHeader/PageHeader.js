@@ -10,6 +10,10 @@ const useStyles = makeStyles(theme => ({
       [theme.breakpoints.down('xs')]: {
         fontSize: theme.typography.h4.fontSize
       }
+    },
+    [theme.breakpoints.down('xs')]: {
+      backgroundColor: theme.palette.background.default,
+      opacity: 0.9
     }
   }
 }))
@@ -31,7 +35,7 @@ const PageHeader =  () => {
 
   const HeaderLink = React.forwardRef((props, _) => {
     const { navigate, ...reactLinkProps } = props;
-    return (<ReactLink underline="none" color="inherit" {...reactLinkProps}>{props.children}</ReactLink>)
+    return (<ReactLink underline="none" color="inherit" onClick={toggleNav} {...reactLinkProps}>{props.children}</ReactLink>)
   })
 
   return (
@@ -43,11 +47,11 @@ const PageHeader =  () => {
               Christian Siber
             </Link>
           </div>
-            <ul className={`links ${classes.links} ${isNavOpen ? 'open' : 'closed'} navlinks`}>
-              <li><Link to="/" variant="body1" component={HeaderLink}>About</Link></li>
-              <li><Link to="/skills" variant="body1" component={HeaderLink}>Skills</Link></li>
-            </ul>
-          <BurgerMenu className="menu" onChange={toggleNav}></BurgerMenu>
+          <ul className={`links ${classes.links} ${isNavOpen ? 'open' : 'closed'} navlinks`}>
+            <li><Link to="/" variant="body1" component={HeaderLink}>About</Link></li>
+            <li><Link to="/skills" variant="body1" component={HeaderLink}>Skills</Link></li>
+          </ul>
+          <BurgerMenu className="menu" open={isNavOpen} onChange={toggleNav}></BurgerMenu>
         </nav>
       </Toolbar>
      </AppBar>
