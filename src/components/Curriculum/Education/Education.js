@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Timespan from 'components/Curriculum/Timespan/Timespan'
-import { Icon, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import classes from './Education.module.css';
+import IconText from 'components/IconText/IconText';
 
 const Education = props => {
   const startDate = new Date(props.data.start);
@@ -12,10 +13,7 @@ const Education = props => {
     <section className={classes.education}>
       <Typography variant="h6" component="h1" gutterBottom>{props.data.title}</Typography>
       <Timespan start={startDate} end={endDate} />
-      <Typography component="p" className={classes.info}>
-        <Icon fontSize="small" className={classes.icon}>school</Icon>
-        <span>{props.data.facility}</span> 
-      </Typography>
+      <IconText icon="school" text={props.data.facility}></IconText>
       {props.data.focus ? (<Typography className={`${classes.info} ${classes.iconless}`}>{props.data.focus}</Typography>) : null}
       <Typography component="p">{props.data.description}</Typography> 
     </section>

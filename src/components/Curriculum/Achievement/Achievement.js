@@ -15,7 +15,7 @@ const Achievements = props => {
       <RoundedIcon icon={TrophyIcon}></RoundedIcon>
       <div className={classes.info}>
         <Typography className={classes.title}>{props.data.name}</Typography>
-        <Typography>{props.data.facility}</Typography>
+        <Typography gutterBottom>{props.data.facility}</Typography>
         <Typography>{props.data.description}</Typography>
         <Typography>{achievementDate}</Typography>
       </div>
