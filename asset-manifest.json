@@ -1,26 +1,37 @@
 {
   "files": {
-    "main.css": "/static/css/main.ac9f8478.chunk.css",
-    "main.js": "/static/js/main.3897a4d5.chunk.js",
-    "main.js.map": "/static/js/main.3897a4d5.chunk.js.map",
+    "main.css": "/static/css/main.479fec8e.chunk.css",
+    "main.js": "/static/js/main.3589fccb.chunk.js",
+    "main.js.map": "/static/js/main.3589fccb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3967187a.js",
     "runtime-main.js.map": "/static/js/runtime-main.3967187a.js.map",
-    "static/js/2.f0646bcd.chunk.js": "/static/js/2.f0646bcd.chunk.js",
-    "static/js/2.f0646bcd.chunk.js.map": "/static/js/2.f0646bcd.chunk.js.map",
+    "static/js/2.85786004.chunk.js": "/static/js/2.85786004.chunk.js",
+    "static/js/2.85786004.chunk.js.map": "/static/js/2.85786004.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ac9f8478.chunk.css.map": "/static/css/main.ac9f8478.chunk.css.map",
-    "static/js/2.f0646bcd.chunk.js.LICENSE.txt": "/static/js/2.f0646bcd.chunk.js.LICENSE.txt",
+    "static/css/main.479fec8e.chunk.css.map": "/static/css/main.479fec8e.chunk.css.map",
+    "static/js/2.85786004.chunk.js.LICENSE.txt": "/static/js/2.85786004.chunk.js.LICENSE.txt",
     "static/media/bryce.09041a5e.jpg": "/static/media/bryce.09041a5e.jpg",
+    "static/media/certificate.51d77d75.svg": "/static/media/certificate.51d77d75.svg",
+    "static/media/crossfit.ff9506c7.svg": "/static/media/crossfit.ff9506c7.svg",
+    "static/media/cycling.2daa5826.svg": "/static/media/cycling.2daa5826.svg",
+    "static/media/development.67c27f48.svg": "/static/media/development.67c27f48.svg",
     "static/media/devto.5e48624c.svg": "/static/media/devto.5e48624c.svg",
+    "static/media/drawing.fa52484d.svg": "/static/media/drawing.fa52484d.svg",
     "static/media/facebook.2dd5bdd2.svg": "/static/media/facebook.2dd5bdd2.svg",
+    "static/media/foosball.59d7e1ec.svg": "/static/media/foosball.59d7e1ec.svg",
     "static/media/github.04be58c1.svg": "/static/media/github.04be58c1.svg",
     "static/media/linkedin.48f4acce.svg": "/static/media/linkedin.48f4acce.svg",
-    "static/media/xing.8fa25c34.svg": "/static/media/xing.8fa25c34.svg"
+    "static/media/me.59ea57e7.jpg": "/static/media/me.59ea57e7.jpg",
+    "static/media/sourdough.f5a6d136.svg": "/static/media/sourdough.f5a6d136.svg",
+    "static/media/trophy.1891abbe.svg": "/static/media/trophy.1891abbe.svg",
+    "static/media/volleyball.be3d4146.svg": "/static/media/volleyball.be3d4146.svg",
+    "static/media/xing.8fa25c34.svg": "/static/media/xing.8fa25c34.svg",
+    "static/media/yoga.19a7f2f0.svg": "/static/media/yoga.19a7f2f0.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.3967187a.js",
-    "static/js/2.f0646bcd.chunk.js",
-    "static/css/main.ac9f8478.chunk.css",
-    "static/js/main.3897a4d5.chunk.js"
+    "static/js/2.85786004.chunk.js",
+    "static/css/main.479fec8e.chunk.css",
+    "static/js/main.3589fccb.chunk.js"
   ]
 }
