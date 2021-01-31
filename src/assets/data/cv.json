@@ -1,0 +1,120 @@
+{
+  "general": {
+    "name": "Christian Siber",
+    "img": "/assets/images/me.jpg",
+    "dateOfBirth": "1991/05/29",
+    "birthplace": "Salzburg, Austria",
+    "residency": "Vienna, Austria"
+  },
+  "education": [
+    {
+      "start": "2015/10",
+      "end": "2018/07",
+      "facility": "University of applied Sciences, Hagenberg",
+      "focus": "Software Engineering (MSc)"
+    },
+    {
+      "start": "2012/10",
+      "end": "2015/07",
+      "facility": "University of applied Sciences, Hagenberg",
+      "focus": "Software Engineering (BSc)"
+    },
+    {
+      "start": "2011/07",
+      "end": "2011/07",
+      "facility": "London International Youth Science Forum 2011"
+    },
+    {
+      "start": "2007/09",
+      "end": "2011/07",
+      "facility": "Secondary technical college, Salzburg",
+      "focus": "Biomedical Engineering"
+    },
+    {
+      "start": "2005/09",
+      "end": "2007/07",
+      "facility": "Secondary technical college, Salzburg",
+      "focus": "Technical Engineering"
+    }
+  ],
+  "experience": [
+    {
+      "start": "2017/09",
+      "end": null,
+      "employer": "Dataformers GmbH",
+      "title": "Lead Developer",
+      "location": "Vienna, Austria",
+      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer and technical lead. Integrating the IoT Hub in an existing ecosystem to connect devices around the world. Improving the development and deploy experience by applying various devops principles"
+    },
+    {
+      "start": "2017/03",
+      "end": "2017/08",
+      "employer": "s IT Solutions AT Spardat GmbH",
+      "title": "Application Development .NET",
+      "description": "Working on various fintech-applications for the Erste Group Service Center as well as every Erste Bank branch.",
+      "location": "Vienna, Austria"
+    },
+    {
+      "start": "2015/10",
+      "end": "2017/01",
+      "employer": "bet-at-home.com Entertainment GmbH",
+      "title": "Software Engineer ASP.NET",
+      "description": "Developing features for an international and highly scalable betting platform (http://www.bet-at-home.com).\nOngoing development and maintenance of the service stubs from my previous internship.",
+      "location": "Linz, Austria"
+    },
+    {
+      "start": "2015/04",
+      "end": "2015/09",
+      "employer": "bet-at-home.com Entertainment GmbH",
+      "title": "Software Engineer Intern",
+      "description": "Implementation of REST and SOAP service stubs for various third party services.\nResponsible for the architecture and design of a website to monitor and configure those services.\nEnables testing of the main website without the dependency of third party services.",
+      "location": "Linz, Austria"
+    },
+    {
+      "start": "2014/03",
+      "end": "2014/07",
+      "employer": "Digital Concepts OG",
+      "title": "Software Engineer",
+      "description": "Creating automated backend and frontend tests for a ruby on rails application with selenium and cucumber.",
+      "location": "Linz, Austria"
+    }
+  ],
+  "accomplishments": [
+    {
+      "type": "certification",
+      "name": "MCSA: Web Applications",
+      "organization": "Microsoft Corporation",
+      "date": "2018/12"
+    },
+    {
+      "type": "certification",
+      "name": "MCSD: App Builder",
+      "organization": "Microsoft Corporation",
+      "date": "2018/12"
+    },
+    {
+      "type": "achievement",
+      "name": "6th place",
+      "facility": "Cloudflight",
+      "description": "Catalysts Coding Contest 2017",
+      "date": "2017/10"
+    },
+    {
+      "type": "achievement",
+      "name": "1st place",
+      "description": "Equipting a CPR manikin with electronics to emulate various vital parameters.",
+      "facility": "Jugend Innovativ (Austrian engineering competition)",
+      "date": "2011/06"
+    }
+  ],
+  "hobbies": [
+    "Software & Product Development",
+    "Crossfit",
+    "Volleyball",
+    "Biking",
+    "Drawing",
+    "Foosball",
+    "Baking / Sourdough",
+    "Yoga & Meditation"
+  ]
+}

@@ -43,7 +43,7 @@ const Skills = () => {
         </section>
           :
         <p className={classes.selectionHint}>
-          <Icon >info</Icon>
+          <Icon>info</Icon>
           <span>Select a technology, to see the projects i used it in.</span>
         </p>
       }

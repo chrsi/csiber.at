@@ -50,6 +50,7 @@ const PageHeader =  () => {
           <ul className={`links ${classes.links} ${isNavOpen ? 'open' : 'closed'} navlinks`}>
             <li><Link to="/" variant="body1" component={HeaderLink}>About</Link></li>
             <li><Link to="/skills" variant="body1" component={HeaderLink}>Skills</Link></li>
+            <li><Link to="/cv" variant="body1" component={HeaderLink}>CV</Link></li>
           </ul>
           <BurgerMenu className="menu" open={isNavOpen} onChange={toggleNav}></BurgerMenu>
         </nav>

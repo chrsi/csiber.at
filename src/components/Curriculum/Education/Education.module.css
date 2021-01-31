@@ -1,0 +1,15 @@
+.info>* {
+  vertical-align: middle;
+}
+
+.info>.icon {
+  margin-right: 1rem;
+}
+
+.education {
+  margin-bottom: 2rem;
+}
+
+.iconless {
+  padding-left: 36px;
+}

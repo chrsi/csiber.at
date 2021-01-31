@@ -1,0 +1,11 @@
+.info>* {
+  vertical-align: middle;
+}
+
+.info>.icon {
+  margin-right: 1rem;
+}
+
+.experience {
+  margin-bottom: 2rem;
+}

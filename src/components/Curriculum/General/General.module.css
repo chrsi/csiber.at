@@ -1,0 +1,27 @@
+.infoBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.infoField {
+  flex-basis: 50%;
+  padding: 0 .5rem;
+  font-weight: 800 !important;
+}
+
+.infoField:nth-of-type(odd) {
+  text-align: end;
+}
+
+.profileImage {
+  width: 25% !important;
+  height: 25% !important;
+
+  max-width: 14rem;
+  max-height: 14rem;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+}

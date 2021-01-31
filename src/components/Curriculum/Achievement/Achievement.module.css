@@ -1,0 +1,18 @@
+.achievements {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.achievements>* {
+  vertical-align: middle;
+}
+
+.title {
+  font-weight: 800 !important;
+}
+
+.info {
+  white-space: pre-wrap;
+  margin-left: 1rem;
+}

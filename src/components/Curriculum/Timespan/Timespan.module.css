@@ -1,0 +1,19 @@
+.timespan {
+  margin: 0;
+}
+
+.timespan>.icon {
+  margin-right: 1rem;
+}
+
+.timespan>* {
+  vertical-align: middle;
+}
+
+.startValue {
+  margin-right: .5rem;
+}
+
+.endValue {
+  margin-left: .5rem;
+}
