@@ -3,8 +3,14 @@ import cv from 'assets/data/cv.json'
 import { Accomplishments, General, ExperienceTimeline, EducationTimeline, Hobbies } from "components/Curriculum";
 import classes from './CurriculumVitae.module.css';
 import printClasses from './CurriculumVitae.print.module.css';
+import { Fab } from '@material-ui/core';
+import PrintIcon from '@material-ui/icons/Print';
 
 const CurriculumVitae = () => {
+  function printPage () {
+    window.print();
+  }
+
   return (
     <div>
       <section className={printClasses.cv}>
@@ -26,6 +32,10 @@ const CurriculumVitae = () => {
         <Accomplishments data={cv.accomplishments} />
         <Hobbies data={cv.hobbies} />
       </section>
+
+      <Fab color="primary" className={classes.printButton} onClick={printPage}>
+        <PrintIcon />
+      </Fab>
     </div>
   );
 };

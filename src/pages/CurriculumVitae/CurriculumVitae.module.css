@@ -2,6 +2,10 @@
   .cv {
     display: none;
   }
+
+  .printButton {
+    display: none !important;
+  }
 }
 
 .cv {
@@ -14,4 +18,10 @@
 
 .cv>* {
   margin-bottom: 4rem;
+}
+
+.printButton {
+  position: fixed !important;
+  bottom: 1.5rem;
+  right: 1.5rem;
 }
