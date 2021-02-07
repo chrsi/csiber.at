@@ -6,7 +6,7 @@
 }
 
 .hobbyList > * {
-  flex-basis: 25%;
+  flex: 1 1 25%;
   text-align: center;
   white-space: pre-wrap;
   margin: 1rem;
@@ -18,8 +18,8 @@
 }
 
 .hobbyIcon {
-  width: 80px !important;
-  height: 80px !important;
+  width: 60px !important;
+  height: 60px !important;
 }
 
 @media print {
@@ -36,6 +36,7 @@
   }
 
   .hobbyList > * {
+    flex: 0 0 50px;
     margin: 0.5rem;
   }
 }
