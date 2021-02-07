@@ -82,4 +82,8 @@
   .profession > * {
     margin-bottom: 2rem;
   }
+
+  .profession h1 {
+    color: #004E7C;
+  }
 }
