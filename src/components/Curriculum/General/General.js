@@ -4,15 +4,6 @@ import classes from './General.module.css';
 import { Avatar, Typography } from '@material-ui/core';
 import profileImage from 'assets/images/me.jpg'
 
-const GeneralInfoLine = props => {
-  return (
-    <>
-      <Typography component="span" className={classes.infoField}>{props.title}</Typography>
-      <Typography component="span">{props.value}</Typography>
-    </>
-  )
-}
-
 const General = props => {
   const dateTimeFormat = new Intl.DateTimeFormat('en', { dateStyle: 'long' })
   const birthDate = dateTimeFormat.format(new Date(props.data.dateOfBirth));
@@ -21,9 +12,14 @@ const General = props => {
     <section className={classes.general}>
       <Avatar src={profileImage} className={classes.profileImage}></Avatar>
       <section className={classes.infoBox}>
-        <GeneralInfoLine title="Name" value={props.data.name} />
-        <GeneralInfoLine title="Residence" value={props.data.residency} />
-        <GeneralInfoLine title="Birthday" value={birthDate} />
+        <Typography component="span" style={{ gridColumnStart: 1, gridRowStart: 1 }} className={classes.infoField}>Name</Typography>
+        <Typography component="span" style={{ gridColumnStart: 2, gridRowStart: 1 }}>{props.data.name}</Typography>
+
+        <Typography component="span" style={{ gridColumnStart: 1, gridRowStart: 2 }} className={classes.infoField}>Residence</Typography>
+        <Typography component="span" style={{ gridColumnStart: 2, gridRowStart: 2 }}>{props.data.residency}</Typography>
+
+        <Typography component="span" style={{ gridColumnStart: 1, gridRowStart: 3 }}className={classes.infoField}>Birthday</Typography>
+        <Typography component="span" style={{ gridColumnStart: 2, gridRowStart: 3 }}>{birthDate}</Typography>
       </section>
       <section className={classes.infoBoxPrint}>
         <Typography variant="h5" component="p" className={classes.name}>{props.data.name}</Typography>

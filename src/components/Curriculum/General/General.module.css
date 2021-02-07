@@ -1,14 +1,10 @@
 .infoBox {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 0.5rem;
 }
 
 .infoBoxPrint {
-  display: none;
-}
-
-.contact {
   display: none;
 }
 
@@ -17,8 +13,6 @@
 }
 
 .infoField {
-  flex-basis: 50%;
-  padding: 0 .5rem;
   font-weight: 800 !important;
 }
 
@@ -27,17 +21,21 @@
 }
 
 .profileImage {
-  width: 25% !important;
-  height: 25% !important;
+  width: 50% !important;
+  height: 50% !important;
 
-  max-width: 14rem;
-  max-height: 14rem;
+  max-width: 10rem;
+  max-height: 10rem;
 
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
 
   border: 2px solid white;
+}
+
+.contact {
+  display: none;
 }
 
 @media print {
