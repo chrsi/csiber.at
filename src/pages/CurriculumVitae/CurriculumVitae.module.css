@@ -1,3 +1,9 @@
+@media print {
+  .cv {
+    display: none;
+  }
+}
+
 .cv {
   width: 80%;
   max-width: 800px;

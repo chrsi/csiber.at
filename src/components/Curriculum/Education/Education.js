@@ -11,7 +11,7 @@ const Education = props => {
 
   return (
     <section className={classes.education}>
-      <Typography variant="h6" component="h1" gutterBottom>{props.data.title}</Typography>
+      <Typography variant="h6" component="h2" gutterBottom>{props.data.title}</Typography>
       <Timespan start={startDate} end={endDate} />
       <IconText icon="school" text={props.data.facility}></IconText>
       {props.data.focus ? (<Typography className={`${classes.info} ${classes.iconless}`}>{props.data.focus}</Typography>) : null}

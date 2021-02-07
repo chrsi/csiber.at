@@ -10,3 +10,9 @@
   padding: 1rem;
   flex-grow: 1;
 }
+
+@media print {
+  .accomplishmentsGrid>* {
+    padding: 0.5rem;
+  }
+}

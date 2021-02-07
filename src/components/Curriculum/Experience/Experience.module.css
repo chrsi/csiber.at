@@ -1,3 +1,9 @@
 .experience {
   margin-bottom: 2rem;
 }
+
+@media print {
+  .experience {
+    margin-bottom: 1rem;
+  }
+}

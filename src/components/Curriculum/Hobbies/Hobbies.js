@@ -30,8 +30,8 @@ const Hobbies = props => {
       <div className={classes.hobbyList}>
         { props.data.map(hobby =>
           <div key={hobby} className={classes.hobby}>
-            <RoundedIcon icon={hobbyIcons[hobby]} size="80px"></RoundedIcon>
-            <Typography>{hobby}</Typography>
+            <RoundedIcon icon={hobbyIcons[hobby]} className={classes.hobbyIcon}></RoundedIcon>
+            <Typography className={classes.hobbyDescription}>{hobby}</Typography>
           </div>
         )}
       </div>

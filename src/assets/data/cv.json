@@ -1,10 +1,17 @@
 {
   "general": {
-    "name": "Christian Siber",
+    "name": "Christian Siber, MSc",
+    "profession": "Fullstack Developer",
     "img": "/assets/images/me.jpg",
     "dateOfBirth": "1991-05-29T00:00:00.000Z",
     "birthplace": "Salzburg, Austria",
-    "residency": "Vienna, Austria"
+    "residency": "Vienna, Austria",
+    "contact": {
+      "website": "https://www.csiber.at",
+      "email": null,
+      "phone": null
+    },
+    "description": "A software developer who loves every aspect of digital product creation. From problem solving, finding innovative solutions, refining user stories, designing stunning user interfaces, creating awesome user experiences, to building sustainable software architectures and implementation."
   },
   "education": [
     {
@@ -39,7 +46,7 @@
       "employer": "Dataformers GmbH",
       "title": "Lead Developer",
       "location": "Vienna, Austria",
-      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer and technical lead. Integrating the IoT Hub in an existing ecosystem to connect devices around the world. Improving the development and deploy experience by applying various devops principles."
+      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer, and technical lead. Integrating the IoT Hub in an existing ecosystem to connect devices around the world."
     },
     {
       "start": "2017-03-01T00:00:00.000Z",
@@ -54,7 +61,7 @@
       "end": "2017-01-01T00:00:00.000Z",
       "employer": "bet-at-home.com Entertainment GmbH",
       "title": "Software Engineer ASP.NET",
-      "description": "Developing features for an international and highly scalable betting platform (http://www.bet-at-home.com).\nOngoing development and maintenance of the service stubs from my previous internship.",
+      "description": "Developing features for an international and highly scalable betting platform.\nOngoing development and maintenance of the service stubs from my previous internship.",
       "location": "Linz, Austria"
     },
     {
@@ -89,7 +96,7 @@
     {
       "type": "achievement",
       "name": "1st place",
-      "description": "Equipting a CPR manikin with electronics to emulate various vital parameters.",
+      "description": "Emulating vital parameters on a CPR maniking.",
       "facility": "Jugend Innovativ (Austrian engineering competition)",
       "date": "2011-06-01T00:00:00.000Z"
     }

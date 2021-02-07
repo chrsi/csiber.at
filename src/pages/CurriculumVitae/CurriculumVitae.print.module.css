@@ -1,0 +1,85 @@
+.cv {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 0 !important;
+    padding: 3rem 2rem 2rem 2rem !important;
+  }
+
+  html {
+    font-size: 12px;
+    height: 100%;
+  }
+  
+  /* Safari uses more print margin. Reducing the font-size lets the content fit onto one page. */
+  @media not all and (min-resolution:.001dpcm) { @media {
+    html { 
+      font-size: 11px;
+    }
+  }}
+
+  body {
+    color-adjust: exact;
+  }
+
+  svg {
+    color: black !important;
+  }
+
+  body header {
+    display: none !important;
+  }
+
+  .cv {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+
+  .cv h1 {
+    text-align: start;
+    margin-bottom: 0.125rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .cv h2 {
+    text-align: start;
+    font-size: 1.125rem;
+  }
+
+  .personal {
+    flex: 0 0 35%;
+    background-color: #004E7C;
+    color: white;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .personal h1 {
+    font-size: 1.5rem;
+  }
+
+  .personal > * {
+    margin-bottom: 2rem;
+  }
+
+  .profession {
+    flex: 1 1 auto;
+    background-color: white;
+    padding: 2rem;
+  }
+
+  .profession > * {
+    margin-bottom: 2rem;
+  }
+}

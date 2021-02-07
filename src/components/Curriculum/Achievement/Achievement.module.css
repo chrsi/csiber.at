@@ -16,3 +16,9 @@
   white-space: pre-wrap;
   margin-left: 1rem;
 }
+
+@media print {
+  .achievements {
+    align-items: start;
+  }
+}

@@ -3,5 +3,11 @@
 }
 
 .iconless {
-  padding-left: 36px;
+  padding-left: 2.25rem;
+}
+
+@media print {
+  .education {
+    margin-bottom: 1rem;
+  }
 }
