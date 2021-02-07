@@ -36,6 +36,8 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.5rem;
+
+  border: 2px solid white;
 }
 
 @media print {
