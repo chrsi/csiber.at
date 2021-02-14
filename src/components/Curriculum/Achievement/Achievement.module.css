@@ -12,6 +12,11 @@
   font-weight: 800 !important;
 }
 
+.link > .icon {
+  margin-left: .5rem;
+  vertical-align: bottom;
+}
+
 .info {
   white-space: pre-wrap;
   margin-left: 1rem;
@@ -20,5 +25,9 @@
 @media print {
   .achievements {
     align-items: start;
+  }
+
+  .icon {
+    display: none !important;
   }
 }

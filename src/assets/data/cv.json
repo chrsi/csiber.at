@@ -44,7 +44,7 @@
       "start": "2018-12-19T00:00:00.000Z",
       "end": null,
       "employer": "Vuzzler",
-      "link": "www.vuzzler.com",
+      "link": "https://vuzzler.com",
       "title": "Creator",
       "location": "Vienna, Austria",
       "description": "Designing and implementing a digital foosball ranking system. Made use of QR codes and NFC tags to let players quickly connect to shared match sessions. Ported the frontend application to iOS and Android using Cordova."
@@ -79,13 +79,15 @@
       "type": "certification",
       "name": "MCSA: Web Applications",
       "organization": "Microsoft Corporation",
-      "date": "2018-12-01T00:00:00.000Z"
+      "date": "2018-12-01T00:00:00.000Z",
+      "link": "https://www.youracclaim.com/badges/a948ab2b-fa79-4def-97b9-9163a077fca1"
     },
     {
       "type": "certification",
       "name": "MCSD: App Builder",
       "organization": "Microsoft Corporation",
-      "date": "2018-12-01T00:00:00.000Z"
+      "date": "2019-01-23T00:00:00.000Z",
+      "link": "https://www.youracclaim.com/badges/a451731d-cc5a-4095-93c5-f78d1ea7d0b2"
     },
     {
       "type": "achievement",
@@ -99,7 +101,8 @@
       "name": "1st place",
       "description": "Emulating vital parameters on a CPR maniking.",
       "facility": "Jugend Innovativ (Austrian engineering competition)",
-      "date": "2011-06-01T00:00:00.000Z"
+      "date": "2011-06-01T00:00:00.000Z",
+      "link": "https://www.jugendinnovativ.at/projekt-teams/projekte/projekt/projekt/fred-first-aid-rescue-education-dummy/"
     }
   ],
   "hobbies": [
