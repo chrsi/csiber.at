@@ -25,17 +25,14 @@ const General = props => {
         <Typography variant="h5" component="p" className={classes.name}>{props.data.name}</Typography>
         <Typography variant="h6" component="p" gutterBottom>{props.data.profession}</Typography>
         <Typography component="p">Living in: {props.data.residency}</Typography>
-        <Typography component="p">Born: {birthDate}</Typography>
+        <Typography component="p" gutterBottom>Born: {birthDate}</Typography>
+        { props.data.contact.phone && <Typography component="p">Phone: {props.data.contact.phone}</Typography>}
+        { props.data.contact.email && <Typography component="p">Email: {props.data.contact.email}</Typography>}
+        <Typography component="p">Web: {props.data.contact.website}</Typography>
       </section>
       <section className={classes.descriptionPrint}>
         <Typography variant="h4" component="h1">Description</Typography>
         <Typography component="p">{props.data.description}</Typography>
-      </section>
-      <section className={classes.contact}>
-        <Typography variant="h4" component="h1">Contact</Typography>
-        { props.data.contact.phone && <Typography component="p">Phone: {props.data.contact.phone}</Typography>}
-        { props.data.contact.email && <Typography component="p">Email: {props.data.contact.email}</Typography>}
-        <Typography component="p">Web: {props.data.contact.website}</Typography>
       </section>
     </section>
   );

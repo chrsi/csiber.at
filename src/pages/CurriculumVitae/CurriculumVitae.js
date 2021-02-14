@@ -1,6 +1,6 @@
 import React from 'react';
 import cv from 'assets/data/cv.json'
-import { Accomplishments, General, ExperienceTimeline, EducationTimeline, Hobbies } from "components/Curriculum";
+import { Accomplishments, General, ExperienceTimeline, EducationTimeline, Hobbies, Skills } from "components/Curriculum";
 import classes from './CurriculumVitae.module.css';
 import printClasses from './CurriculumVitae.print.module.css';
 import { Fab } from '@material-ui/core';
@@ -16,6 +16,7 @@ const CurriculumVitae = () => {
       <section className={printClasses.cv}>
         <section className={printClasses.personal}>
           <General data={cv.general} />
+          <Skills data={cv.skills} ></Skills>
           <Hobbies data={cv.hobbies} />
         </section>
         <section className={printClasses.profession}>
