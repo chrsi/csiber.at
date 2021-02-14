@@ -11,7 +11,10 @@ import { Route, HashRouter as Router, Switch } from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
-    type: "dark"
+    type: "dark",
+    primary: {
+      main: "#327196"
+    }
   }
 });
 
