@@ -41,6 +41,15 @@
   ],
   "experience": [
     {
+      "start": "2018-12-19T00:00:00.000Z",
+      "end": null,
+      "employer": "Vuzzler",
+      "link": "www.vuzzler.com",
+      "title": "Creator",
+      "location": "Vienna, Austria",
+      "description": "Designing and implementing a digital foosball ranking system. Made use of QR codes and NFC tags to let players quickly connect to shared match sessions. Ported the frontend application to iOS and Android using Cordova."
+    },
+    {
       "start": "2017-09-01T00:00:00.000Z",
       "end": null,
       "employer": "Dataformers GmbH",
@@ -57,19 +66,11 @@
       "location": "Vienna, Austria"
     },
     {
-      "start": "2015-10-01T00:00:00.000Z",
+      "start": "2015-04-01T00:00:00.000Z",
       "end": "2017-01-01T00:00:00.000Z",
       "employer": "bet-at-home.com Entertainment GmbH",
       "title": "Software Engineer ASP.NET",
-      "description": "Developing features for an international and highly scalable betting platform.\nOngoing development and maintenance of the service stubs from my previous internship.",
-      "location": "Linz, Austria"
-    },
-    {
-      "start": "2015-04-01T00:00:00.000Z",
-      "end": "2015-09-01T00:00:00.000Z",
-      "employer": "bet-at-home.com Entertainment GmbH",
-      "title": "Software Engineer Intern",
-      "description": "Implementation of REST and SOAP service stubs for various third party services.\nResponsible for the architecture and design of a website to monitor and configure those services.",
+      "description": "Developing features for an international and highly scalable betting platform.\nImplementating multiple REST and SOAP services that stub various third party services for testing. Responsible for the architecture and design of a website to monitor and configure those services.",
       "location": "Linz, Austria"
     }
   ],
