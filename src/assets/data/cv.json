@@ -114,5 +114,14 @@
     "Foosball",
     "Baking / Sourdough",
     "Yoga & Meditation"
+  ],
+  "skills": [
+    ["C#", "Javascript", "Typescript", "HTML", "CSS", "SASS"],
+    ["Angular", "Vue", "React", "RxJS", "Jest", "Cordova", "Vuex", "Vuetify", "GraphQL", "webpack"],
+    ["SignalR", "Entity Framework", "ASP.NET MVC / WebApi", "Moq", "XUnit"],
+    ["Sql Server", "CosmosDb"],
+    ["Material", "Bootstrap"],
+    ["Azure", "Azure DevOps", "Jira", "Confluence", "Firebase", "Active Directory"],
+    ["Visual Studio", "Visual Studio Code", "VIM", "Photoshop", "Illustrator", "CI/CD", "Git", "Github"]
   ]
 }

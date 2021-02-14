@@ -7,7 +7,7 @@ const Skills = props => {
     <section>
       <Typography variant="h4" component="h1">Skills</Typography>
       { props.data.map(skillGroup => (
-        <Typography component="p">
+        <Typography component="p" gutterBottom>
           { skillGroup.join(', ') }
         </Typography>
       ))
