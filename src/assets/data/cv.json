@@ -11,14 +11,14 @@
       "email": null,
       "phone": null
     },
-    "description": "A software developer who loves every aspect of digital product creation. From problem solving, finding innovative solutions, refining user stories, designing stunning user interfaces, creating awesome user experiences, to building sustainable software architectures and implementation."
+    "description": "A software developer who loves every aspect of digital product creation. From problem solving, finding innovative solutions, refining user stories, designing stunning user interfaces, creating awesome user experiences, to building sustainable software architectures and implementing them."
   },
   "education": [
     {
       "start": "2015-10-01T00:00:00.000Z",
       "end": "2018-07-01T00:00:00.000Z",
       "facility": "University of applied Sciences, Hagenberg",
-      "focus": "Software Engineering (MSc)"
+      "focus": "Software Engineering (MSc) - Focus: Machine Learning, AI, Web"
     },
     {
       "start": "2012-10-01T00:00:00.000Z",
@@ -55,7 +55,7 @@
       "employer": "Dataformers GmbH",
       "title": "Lead Developer",
       "location": "Vienna, Austria",
-      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer, and technical lead. Integrating the IoT Hub in an existing ecosystem to connect devices around the world."
+      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer and technical lead. Integrating the IoT Hub into an existing ecosystem to connect medical devices around the world."
     },
     {
       "start": "2017-03-01T00:00:00.000Z",
