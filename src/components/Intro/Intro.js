@@ -13,7 +13,7 @@ const Intro = () => {
         my name is Christian and I'm a software developer from Mondsee (Austria) currently living in Vienna.
       </Typography>
       <Typography variant="body1" paragraph={true}>
-        I love to build digital products that support our everyday live. While I try to keep the device interaction at a minimum I focus on making the remaining user interface as intuitive as possible.
+        I love to build digital products that support our everyday life. While I try to keep the device interaction at a minimum I focus on making the remaining user interface as intuitive as possible.
       </Typography>
     </section>
   );
