@@ -4,7 +4,7 @@ const express = require('express')
 const blogController = require('./controller/blogController')
 
 const app = express()
-const port = process.env.API_PORT;
+const port = process.env.PORT;
 
 app.use('/api/blog', blogController);
 
