@@ -1,0 +1,20 @@
+{
+  "name": "at.csiber.notion-gateway",
+  "version": "1.0.0",
+  "description": "A gateway for the notion platform that serves as a CMS for csiber.at",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrsi/csiber.at"
+  },
+  "author": "Christian Siber",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "got": "^11.8.2"
+  }
+}
