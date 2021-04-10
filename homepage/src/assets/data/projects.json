@@ -1,7 +1,7 @@
 [
   {
     "name": "Vuzzler",
-    "description": "Your digital foosbal companion",
+    "description": "Your digital foosball companion",
     "url": "https://www.vuzzler.com",
     "stack": ["csharp", "js", "css", "vue", "vuex", "signalr", "indesign", "illustrator", "ef", "cordova", "storyblok", "azure-ai", "vuetify", "firebase", "sqlserver", "material", "pwa", "azure-appservice", "azure-devops", "aspnetcore-webapi"],
     "teamSize": 1
