@@ -8,6 +8,8 @@ import About from './pages/About/About';
 import Skills from './pages/Skills/Skills';
 import CurriculumVitae from './pages/CurriculumVitae/CurriculumVitae';
 import { Route, HashRouter as Router, Switch } from 'react-router-dom';
+import Blog from 'pages/Blog/Blog';
+import BlogEntry from 'pages/BlogEntry/BlogEntry';
 
 const theme = createMuiTheme({
   palette: {
@@ -30,6 +32,12 @@ const App = ()  => {
           </Route>
           <Route path="/cv">
             <CurriculumVitae></CurriculumVitae>
+          </Route>
+          <Route path="/blog/:id">
+            <BlogEntry></BlogEntry>
+          </Route>
+          <Route path="/blog">
+            <Blog></Blog>
           </Route>
           <Route path="/">
             <About></About>
