@@ -1,5 +1,7 @@
+import { convert } from "../markdownConverter/notion-converter";
+import { parseNotion } from "../markdownConverter/notion/notion-parser";
+
 const got = require('got');
-const renderNotionPage = require('./notionRenderer');
 
 const collectionQuery = {
   collectionId: process.env.NOTION_COLLECTIONID,
@@ -41,20 +43,20 @@ async function getAllIds() {
     responseType: 'json'
   })
 
-  const entries = body.result.blockIds.map(id => {
+  const entries = body.result.blockIds.map((id: any) => {
     const blockInfo = body.recordMap.block[id].value;
     return {
       id,
       title: blockInfo.properties.title[0][0],
-      description: blockInfo.properties[process.env.NOTION_DESCRIPTION_PROPERTY][0][0],
-      publishDate: blockInfo.properties[process.env.NOTION_PUBLISH_DATE_PROPERTY][0][1][0][1].start_date
+      description: blockInfo.properties[process.env.NOTION_DESCRIPTION_PROPERTY as any][0][0],
+      publishDate: blockInfo.properties[process.env.NOTION_PUBLISH_DATE_PROPERTY as any][0][1][0][1].start_date
     }
   })
 
   return entries
 }
 
-async function render(id) {
+async function render(id: string) {
   const { body: overview } = await got.post(`${process.env.NOTION_HOST}/api/v3/syncRecordValues`, {
     json: {
       requests: [
@@ -72,15 +74,15 @@ async function render(id) {
     throw Error("Could not read Notion doc with this ID - make sure public access is enabled");
   }
 
-  const contentIds = overview.recordMap.block[id].value.content
+  const contentIds: any[] = overview.recordMap.block[id].value.content
 
-  const content = []
-  let recordMap = {}
+  const content: any[] = []
+  let recordMap: any = {}
   let lastChunk
   let hasMorePageChunks = true
 
   while(hasMorePageChunks) {
-    const cursor = lastChunk && lastChunk.cursor || ({ stack: [] })
+    const cursor: any = lastChunk && lastChunk.cursor || ({ stack: [] })
 
     const {body: chunk} = await got.post(`${process.env.NOTION_HOST}${process.env.NOTION_CONTENT_PATH}`, {
       json: {
@@ -105,7 +107,8 @@ async function render(id) {
     if(block) content.push(block.value)
   })
 
-  return renderNotionPage(content);
+  const notionBlocks = parseNotion(content);
+  return convert(notionBlocks);
 }
 
 exports.getAllIds = getAllIds;
