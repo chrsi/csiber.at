@@ -111,5 +111,7 @@ async function render(id: string) {
   return convert(notionBlocks);
 }
 
-exports.getAllIds = getAllIds;
-exports.render = render;
+export {
+  getAllIds,
+  render
+}
