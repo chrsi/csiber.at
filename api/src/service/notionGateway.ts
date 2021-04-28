@@ -3,6 +3,10 @@ import { parseNotion } from "../markdownConverter/notion/notion-parser";
 
 const got = require('got');
 
+const QUERY_PATH = '/api/v3/queryCollection'
+const QURY_SPECIFIC_PATH = '/api/v3/syncRecordValues'
+const CONTENT_PATH = '/api/v3/loadPageChunk'
+
 const collectionQuery = {
   collectionId: process.env.NOTION_COLLECTIONID,
   collectionViewId: process.env.NOTION_COLLECTIONVIEWID,
@@ -57,7 +61,7 @@ async function getAllIds() {
 }
 
 async function render(id: string) {
-  const { body: overview } = await got.post(`${process.env.NOTION_HOST}/api/v3/syncRecordValues`, {
+  const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QUERY_PATH}`, {
     json: {
       requests: [
         {
@@ -84,7 +88,7 @@ async function render(id: string) {
   while(hasMorePageChunks) {
     const cursor: any = lastChunk && lastChunk.cursor || ({ stack: [] })
 
-    const {body: chunk} = await got.post(`${process.env.NOTION_HOST}${process.env.NOTION_CONTENT_PATH}`, {
+    const {body: chunk} = await got.post(`${process.env.NOTION_HOST}${CONTENT_PATH}`, {
       json: {
         pageId: id,
         limit: 100,
@@ -111,7 +115,40 @@ async function render(id: string) {
   return convert(notionBlocks);
 }
 
+async function getById(id: string) {
+  const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QURY_SPECIFIC_PATH}`, {
+    json: {
+      requests: [
+        {
+          id,
+          table: "block",
+          version: -1
+        }
+      ]
+    },
+    responseType: 'json'
+  })
+
+  const blockContent = overview.recordMap.block[id].value;
+  if (blockContent === undefined) {
+    return null;
+  }
+
+  const image = blockContent.format?.page_cover ?
+    formatImage(blockContent.format?.page_cover) : undefined
+  const title = blockContent.properties.title[0][0];
+
+  return { title, image }
+}
+
+function formatImage(imageUrl: string) {
+  return imageUrl.startsWith('/') ?
+    `${process.env.NOTION_HOST}${imageUrl}` :
+    imageUrl;
+}
+
 export {
   getAllIds,
+  getById,
   render
 }
