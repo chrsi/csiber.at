@@ -10,7 +10,6 @@ const Blog = () => {
   const history = useHistory();
 
   const fetchBlogArticles = useCallback(async () => {
-    console.log('doing stuff')
     const articles = await get('/blog');
     if (response.ok) {
       setArticles(articles);
@@ -18,8 +17,6 @@ const Blog = () => {
   }, [get, response])
 
   useEffect(() => {
-    console.log('doing other stuff')
-
     fetchBlogArticles()
   }, [fetchBlogArticles])
 
