@@ -61,7 +61,7 @@ async function getAllIds() {
 }
 
 async function render(id: string) {
-  const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QUERY_PATH}`, {
+  const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QURY_SPECIFIC_PATH}`, {
     json: {
       requests: [
         {
