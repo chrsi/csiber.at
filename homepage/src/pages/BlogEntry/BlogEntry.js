@@ -4,17 +4,26 @@ import { useFetch } from 'use-http';
 import classes from './BlogEntry.module.css';
 import ReactMarkdown from 'react-markdown';
 import { PrismCodeRenderer, LinkRenderer } from '../../markdown'
+import { Typography } from '@material-ui/core';
 
 const BlogEntry = () => {
   const { id: blogId } = useParams()
   const { data: blogContent } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}/content`, {}, [ blogId ]);
   const { data: meta } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}`, {}, [ blogId ]);
 
+  const markdownComponents = {
+    code: PrismCodeRenderer,
+    a: LinkRenderer,
+    h1: (props) => <Typography component="h2" variant="h4" {...props}></Typography>,
+    h2: (props) => <Typography component="h3" variant="h5" {...props}></Typography>,
+    h3: (props) => <Typography component="h4" variant="h6" {...props}></Typography>
+  }
+
   return (
     <main className={classes.blogEntry}>
-      { meta && <h1>{meta.title}</h1> }
+      { meta && <Typography component="h1" variant="h3">{meta.title}</Typography> }
       { blogContent &&
-        <ReactMarkdown components={{ code: PrismCodeRenderer, a: LinkRenderer }} children={blogContent}>
+        <ReactMarkdown components={markdownComponents} children={blogContent}>
         </ReactMarkdown>
       }
     </main>
