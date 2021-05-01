@@ -1,9 +1,49 @@
-.blogEntry {
+.content {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
 }
 
-img {
+.content img {
   max-width: 100%;
+}
+
+.header {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.header .imageContainer {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-top: -100px;
+  overflow: hidden;
+  z-index: -1;
+  background-color: black;
+}
+
+.header .imageContainer .image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+}
+
+.header .headline {
+  width: 100%;
+  z-index: 1;
+  padding: 1rem 0;
+}
+
+.header .headline > h1 {
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
 }

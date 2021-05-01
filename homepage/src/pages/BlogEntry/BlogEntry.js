@@ -19,11 +19,22 @@ const BlogEntry = () => {
     h3: (props) => <Typography component="h4" variant="h6" {...props}></Typography>
   }
 
+  const header = () => (
+    <section className={classes.header}>
+      <div className={classes.imageContainer}>
+        <img className={classes.image} src={meta.image}></img>
+      </div>
+      <div className={classes.headline}>
+        <Typography component="h1" variant="h3">{meta.title}</Typography>
+      </div>
+    </section>
+  )
+
   return (
-    <main className={classes.blogEntry}>
-      { meta && <Typography component="h1" variant="h3">{meta.title}</Typography> }
+    <main className="blogEntry">
+      { meta && header() }
       { blogContent &&
-        <ReactMarkdown components={markdownComponents} children={blogContent}>
+        <ReactMarkdown className={classes.content} components={markdownComponents} children={blogContent}>
         </ReactMarkdown>
       }
     </main>
