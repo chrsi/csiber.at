@@ -1,18 +1,24 @@
 import React from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { useFetch } from 'use-http';
 import classes from './BlogEntry.module.css';
 import ReactMarkdown from 'react-markdown';
 import { PrismCodeRenderer, LinkRenderer } from '../../markdown';
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { useContentStyle } from '../../hooks/ContentStyleHook';
 import Skeleton from '@material-ui/lab/Skeleton';
+import { ArrowBackIos } from '@material-ui/icons';
 
 const BlogEntry = () => {
   const contentStyle = useContentStyle()
   const { id: blogId } = useParams()
   const { data: blogContent, loading: loadingContent } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}/content`, {}, [ blogId ]);
   const { data: meta, loading: loadingMeta } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}`, {}, [ blogId ]);
+  const history = useHistory();
+
+  function navigateBack() {
+    history.goBack();
+  }
 
   const markdownComponents = {
     code: PrismCodeRenderer,
@@ -28,13 +34,18 @@ const BlogEntry = () => {
       <div className={classes.imageContainer}>
         { meta?.image && <img className={classes.image} src={meta.image} alt="cover of the blog entry"></img> }
       </div>
-      <div className={classes.headline}>
-        <Typography component="h1" variant="h3" className={contentStyle.content}>
-          { loadingMeta ?
-            <Skeleton width="100%" height="70px"></Skeleton> :
-            meta.title
-          }
-        </Typography>
+      <div className={`${contentStyle.content} ${classes.headerContent}`}>
+        <Button onClick={navigateBack} className={classes.backButton} startIcon={<ArrowBackIos />}>
+          Back to the overview
+        </Button>
+        <div className={classes.headline}>
+          <Typography component="h1" variant="h3">
+            { loadingMeta ?
+              <Skeleton width="100%" height="70px"></Skeleton> :
+              meta.title
+            }
+          </Typography>
+        </div>
       </div>
     </section>
   )
