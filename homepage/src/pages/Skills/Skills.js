@@ -6,6 +6,7 @@ import ProjectList from 'components/ProjectList/ProjectList';
 import Typography from '@material-ui/core/Typography';
 import { Icon, makeStyles } from '@material-ui/core';
 import { getTechName } from 'utils/Technology';
+import { useContentStyle } from 'hooks/ContentStyleHook';
 
 const useStyles = makeStyles(theme => ({
   badgeColor: () => ({
@@ -15,6 +16,7 @@ const useStyles = makeStyles(theme => ({
 
 const Skills = () => {
   const styles = useStyles();
+  const contentStyle = useContentStyle();
 
   const [selectedSkill, setSelectedSkill] = useState(null);
   const [filteredProjects, setFilteredProjects] = useState([]);
@@ -25,7 +27,7 @@ const Skills = () => {
   }, [selectedSkill])
 
   return (
-    <div className={classes.content}>
+    <div className={contentStyle.content}>
       <section className={classes.skills}>
         <SkillCloud onClick={setSelectedSkill}></SkillCloud>
       </section>

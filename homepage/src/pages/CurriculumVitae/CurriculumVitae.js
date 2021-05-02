@@ -5,8 +5,11 @@ import classes from './CurriculumVitae.module.css';
 import printClasses from './CurriculumVitae.print.module.css';
 import { Fab } from '@material-ui/core';
 import PrintIcon from '@material-ui/icons/Print';
+import { useContentStyle } from 'hooks/ContentStyleHook';
 
 const CurriculumVitae = () => {
+  const contentStyle = useContentStyle();
+
   function printPage () {
     window.print();
   }
@@ -26,7 +29,7 @@ const CurriculumVitae = () => {
         </section>
       </section>
       
-      <section className={classes.cv}>
+      <section className={`${contentStyle.content} ${classes.cv}`}>
         <General data={cv.general} />
         <ExperienceTimeline data={cv.experience} />
         <EducationTimeline data={cv.education} />

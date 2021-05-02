@@ -1,10 +1,12 @@
 import { Card, CardActionArea, CardContent, Typography } from '@material-ui/core';
+import { useContentStyle } from 'hooks/ContentStyleHook';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFetch } from 'use-http';
 import classes from './Blog.module.css';
 
 const Blog = () => {
+  const contentStyle = useContentStyle();
   const [articles, setArticles] = useState([])
   const { get, response } = useFetch(process.env.REACT_APP_BLOG_API)
   const history = useHistory();
@@ -25,7 +27,7 @@ const Blog = () => {
   }
 
   return (
-    <main className={classes.blog}>
+    <main className={`${classes.blog} ${contentStyle.content}`}>
       {articles.map(article => (
           <Card key={article.id}>
             <CardActionArea onClick={() => navigateTo(article.id)}>

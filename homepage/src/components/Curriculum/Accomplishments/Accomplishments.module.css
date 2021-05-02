@@ -1,18 +1,9 @@
-.accomplishmentsGrid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 -1rem;
-}
-
-.accomplishmentsGrid>* {
-  flex-basis: 50%;
+.accomplishments>* {
   padding: 1rem;
-  flex-grow: 1;
 }
 
 @media print {
-  .accomplishmentsGrid>* {
+  .accomplishments>* {
     padding: 0.5rem;
   }
 }

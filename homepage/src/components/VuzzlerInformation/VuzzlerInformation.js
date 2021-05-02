@@ -1,10 +1,12 @@
-import classes from './VuzzlerInformation.module.css';
 import { Link, Typography } from '@material-ui/core';
 import React from 'react';
+import { useContentStyle } from 'hooks/ContentStyleHook';
 
 const VuzzlerInformation = () => {
+  const contentStyle = useContentStyle();
+
   return (
-    <section className={classes.container}>
+    <section className={contentStyle.content}>
       <Typography variant="h2">Do you play foosball?</Typography>
       <Typography component="p" gutterBottom>Then you might be interested in <strong>Vuzzler</strong>!</Typography>
       <Typography component="p" gutterBottom>Vuzzler is a side project of mine, that collects your foosball matches and creates interesting statistics. Now you can finally show your friends who's the boss.</Typography>
