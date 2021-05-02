@@ -6,12 +6,13 @@ import ReactMarkdown from 'react-markdown';
 import { PrismCodeRenderer, LinkRenderer } from '../../markdown';
 import { Typography } from '@material-ui/core';
 import { useContentStyle } from '../../hooks/ContentStyleHook';
+import Skeleton from '@material-ui/lab/Skeleton';
 
 const BlogEntry = () => {
   const contentStyle = useContentStyle()
   const { id: blogId } = useParams()
-  const { data: blogContent } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}/content`, {}, [ blogId ]);
-  const { data: meta } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}`, {}, [ blogId ]);
+  const { data: blogContent, loading: loadingContent } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}/content`, {}, [ blogId ]);
+  const { data: meta, loading: loadingMeta } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}`, {}, [ blogId ]);
 
   const markdownComponents = {
     code: PrismCodeRenderer,
@@ -22,24 +23,51 @@ const BlogEntry = () => {
     h3: (props) => <Typography component="h4" variant="h6" {...props} gutterBottom></Typography>
   }
 
-  const header = () => (
+  const header = (
     <section className={classes.header}>
       <div className={classes.imageContainer}>
-        <img className={classes.image} src={meta.image}></img>
+        { meta?.image && <img className={classes.image} src={meta.image} alt="cover of the blog entry"></img> }
       </div>
       <div className={classes.headline}>
-        <Typography component="h1" variant="h3" className={contentStyle.content}>{meta.title}</Typography>
+        <Typography component="h1" variant="h3" className={contentStyle.content}>
+          { loadingMeta ?
+            <Skeleton width="100%" height="70px"></Skeleton> :
+            meta.title
+          }
+        </Typography>
       </div>
     </section>
   )
 
+  const SkeletonText = (
+    <>
+      <Typography paragraph>
+        <Skeleton></Skeleton>
+        <Skeleton></Skeleton>
+        <Skeleton width="60%"></Skeleton>
+      </Typography>
+      <Typography paragraph>
+        <Skeleton></Skeleton>
+        <Skeleton></Skeleton>
+        <Skeleton width="30%"></Skeleton>
+      </Typography>
+      <Typography paragraph>
+      <Skeleton></Skeleton>
+      <Skeleton width="80%"></Skeleton>
+      </Typography>
+    </>
+  )
+
   return (
     <main className="blogEntry">
-      { meta && header() }
-      { blogContent &&
-        <ReactMarkdown className={`${contentStyle.content} ${classes.content}`} components={markdownComponents} children={blogContent}>
-        </ReactMarkdown>
-      }
+      { header }
+      <section className={`${contentStyle.content} ${classes.content}`}>
+        { loadingContent ?
+          SkeletonText :
+          <ReactMarkdown  components={markdownComponents} children={blogContent}>
+          </ReactMarkdown>
+        }
+      </section>
     </main>
   );
 };
