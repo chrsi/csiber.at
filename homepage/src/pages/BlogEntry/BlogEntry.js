@@ -4,13 +4,25 @@ import { useFetch } from 'use-http';
 import classes from './BlogEntry.module.css';
 import ReactMarkdown from 'react-markdown';
 import { PrismCodeRenderer, LinkRenderer, ParagraphRenderer } from '../../markdown';
-import { Button, Typography } from '@material-ui/core';
+import { Button, makeStyles, Typography } from '@material-ui/core';
 import { useContentStyle } from '../../hooks/ContentStyleHook';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { ArrowBackIos } from '@material-ui/icons';
 import remarkHint from 'remark-hint';
 
+const useStyles = makeStyles(theme => ({
+  quote: {
+    borderLeft: `4px solid ${theme.palette.background.paper}`,
+    padding: '.75rem',
+    marginLeft: 0,
+    '&>p': {
+      marginBottom: 0
+    }
+  }
+}))
+
 const BlogEntry = () => {
+  const styles = useStyles()
   const contentStyle = useContentStyle()
   const { id: blogId } = useParams()
   const { data: blogContent, loading: loadingContent } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}/content`, {}, [ blogId ]);
@@ -25,6 +37,7 @@ const BlogEntry = () => {
     code: PrismCodeRenderer,
     a: LinkRenderer,
     p: ParagraphRenderer,
+    blockquote: (props) => <blockquote className={styles.quote} {...props}></blockquote>,
     h1: (props) => <Typography component="h2" variant="h4" {...props} gutterBottom></Typography>,
     h2: (props) => <Typography component="h3" variant="h5" {...props} gutterBottom></Typography>,
     h3: (props) => <Typography component="h4" variant="h6" {...props} gutterBottom></Typography>
