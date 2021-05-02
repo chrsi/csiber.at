@@ -1,4 +1,4 @@
-import { Card, CardActionArea, CardContent, Typography } from '@material-ui/core';
+import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { useContentStyle } from 'hooks/ContentStyleHook';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -31,6 +31,10 @@ const Blog = () => {
       {articles.map(article => (
           <Card key={article.id}>
             <CardActionArea onClick={() => navigateTo(article.id)}>
+              { article.image &&
+                <CardMedia component="img" alt="Blog Image" height="100" image={article.image}>
+                </CardMedia>
+              }
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">{article.title}</Typography>
                 <Typography variant="body1" component="p" color="textSecondary">{article.description}</Typography>

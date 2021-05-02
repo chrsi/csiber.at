@@ -47,11 +47,18 @@ async function getAllIds() {
     responseType: 'json'
   })
 
+  
+
   const entries = body.result.blockIds.map((id: any) => {
     const blockInfo = body.recordMap.block[id].value;
+    const image = blockInfo.format?.page_cover ?
+                  formatImage(blockInfo.format?.page_cover) :
+                  undefined
+
     return {
       id,
       title: blockInfo.properties.title[0][0],
+      image,
       description: blockInfo.properties[process.env.NOTION_DESCRIPTION_PROPERTY as any][0][0],
       publishDate: blockInfo.properties[process.env.NOTION_PUBLISH_DATE_PROPERTY as any][0][1][0][1].start_date
     }
