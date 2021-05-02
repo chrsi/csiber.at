@@ -1,4 +1,4 @@
-import { getAllIds, getById, render } from "../service/notionGateway";
+import { getAllIds, getById, render } from "../service/notion-gateway/notion-gateway";
 
 var express = require('express');
 

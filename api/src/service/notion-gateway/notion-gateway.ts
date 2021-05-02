@@ -1,5 +1,8 @@
-import { convert } from "../markdownConverter/notion-converter";
-import { parseNotion } from "../markdownConverter/notion/notion-parser";
+import { convert } from "../../markdownConverter/notion-converter";
+import { parseNotion } from "../../markdownConverter/notion/notion-parser";
+import { BlogPost } from "../../models/blog-post";
+import { NotionBlogPost } from "./models/notion-blog-post";
+import { parseNotionQuery, parseNotionSpecificQuery } from "./notion-parser";
 
 const got = require('got');
 
@@ -41,30 +44,13 @@ const collectionQuery = {
   }
 }
 
-async function getAllIds() {
-  const { body } = await got.post(`${process.env.NOTION_HOST}${process.env.NOTION_QUERY_PATH}`, {
+async function getAllIds(): Promise<BlogPost[]> {
+  const { body } = await got.post(`${process.env.NOTION_HOST}${QUERY_PATH}`, {
     json: collectionQuery,
     responseType: 'json'
   })
 
-  
-
-  const entries = body.result.blockIds.map((id: any) => {
-    const blockInfo = body.recordMap.block[id].value;
-    const image = blockInfo.format?.page_cover ?
-                  formatImage(blockInfo.format?.page_cover) :
-                  undefined
-
-    return {
-      id,
-      title: blockInfo.properties.title[0][0],
-      image,
-      description: blockInfo.properties[process.env.NOTION_DESCRIPTION_PROPERTY as any][0][0],
-      publishDate: blockInfo.properties[process.env.NOTION_PUBLISH_DATE_PROPERTY as any][0][1][0][1].start_date
-    }
-  })
-
-  return entries
+  return parseNotionQuery(body);
 }
 
 async function render(id: string) {
@@ -122,7 +108,7 @@ async function render(id: string) {
   return convert(notionBlocks);
 }
 
-async function getById(id: string) {
+async function getById(id: string): Promise<NotionBlogPost | null> {
   const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QURY_SPECIFIC_PATH}`, {
     json: {
       requests: [
@@ -136,23 +122,10 @@ async function getById(id: string) {
     responseType: 'json'
   })
 
-  const blockContent = overview.recordMap.block[id].value;
-  if (blockContent === undefined) {
-    return null;
-  }
-
-  const image = blockContent.format?.page_cover ?
-    formatImage(blockContent.format?.page_cover) : undefined
-  const title = blockContent.properties.title[0][0];
-
-  return { title, image }
+  return parseNotionSpecificQuery(overview, id);
 }
 
-function formatImage(imageUrl: string) {
-  return imageUrl.startsWith('/') ?
-    `${process.env.NOTION_HOST}${imageUrl}` :
-    imageUrl;
-}
+
 
 export {
   getAllIds,

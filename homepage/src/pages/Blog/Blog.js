@@ -37,8 +37,10 @@ const Blog = () => {
               }
               <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">{article.title}</Typography>
-                <Typography variant="body1" component="p" color="textSecondary">{article.description}</Typography>
-              </CardContent>
+                { article.description &&
+                  <Typography variant="body1" component="p" color="textSecondary">{article.description}</Typography>
+                }
+                  </CardContent>
             </CardActionArea>
           </Card>
       ))}
