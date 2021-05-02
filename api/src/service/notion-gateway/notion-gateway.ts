@@ -50,7 +50,13 @@ async function getAllIds(): Promise<BlogPost[]> {
     responseType: 'json'
   })
 
-  return parseNotionQuery(body);
+  return parseNotionQuery(body).map(post => ({
+    id: post.id,
+    title: post.title,
+    description: post.description,
+    publishDate: post.publishDate,
+    image: post.image?.smallImage
+  }));
 }
 
 async function render(id: string) {
@@ -108,7 +114,7 @@ async function render(id: string) {
   return convert(notionBlocks);
 }
 
-async function getById(id: string): Promise<NotionBlogPost | null> {
+async function getById(id: string): Promise<BlogPost | null> {
   const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QURY_SPECIFIC_PATH}`, {
     json: {
       requests: [
@@ -122,7 +128,16 @@ async function getById(id: string): Promise<NotionBlogPost | null> {
     responseType: 'json'
   })
 
-  return parseNotionSpecificQuery(overview, id);
+  const post = parseNotionSpecificQuery(overview, id);
+  return post !== null ?
+    {
+      id: post.id,
+      title: post.title,
+      description: post.title,
+      publishDate: post.publishDate,
+      image: post.image?.largeImage
+    } :
+    null
 }
 
 

@@ -1,5 +1,8 @@
 import { ConfigurationError } from "../../errors/configuration-error";
+import { GenericImage } from "./models/generic-image";
+import { Image } from "./models/image";
 import { NotionBlogPost } from "./models/notion-blog-post";
+import { UnsplashImage } from "./models/unsplash-image";
 
 export function parseNotionQuery(body: any): NotionBlogPost[] {
   return body.result.blockIds.map((id: string) => {
@@ -28,7 +31,7 @@ export function parseNotionSpecificQuery(body: any, id: string): NotionBlogPost 
   return { id, title, description, image, publishDate }
 }
 
-function getImage(blockInfo: any): string | undefined {
+function getImage(blockInfo: any): Image | undefined {
   return blockInfo.format?.page_cover ?
     formatImage(blockInfo.format?.page_cover) :
     undefined
@@ -56,8 +59,12 @@ function getDescription(blockInfo: any): string | undefined {
   return descriptionBlock !== undefined ? descriptionBlock[0][0] : undefined
 }
 
-function formatImage(imageUrl: string) {
-  return imageUrl.startsWith('/') ?
-    `${process.env.NOTION_HOST}${imageUrl}` :
-    imageUrl;
+function formatImage(imageUrl: string): Image {
+  if (imageUrl.includes('unsplash.com')) {
+    return new UnsplashImage(imageUrl);
+  } else if (imageUrl.startsWith('/')) { // notion hosted images
+    return new GenericImage(process.env.NOTION_HOST + imageUrl)
+  } else {
+    return new GenericImage(imageUrl);
+  }
 }
