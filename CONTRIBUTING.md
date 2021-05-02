@@ -24,6 +24,7 @@ The **type** categorizes the change into the following topics:
 * 🎸  feat: The change contains a new feature added to the site.
 * 🧪  test: The change contains tests like unit, e2e, ... .
 * 🐛  bug: The change fixes a bug on the website.
+* ⚙️   imp: The change contains performance/functional improvements.
 
 The **scope** mentions a particular issue. It's used to group changes together that belong to the same issue. Try to keep this information as small and simple as possible.
 
