@@ -16,9 +16,10 @@ const BlogEntry = () => {
   const markdownComponents = {
     code: PrismCodeRenderer,
     a: LinkRenderer,
-    h1: (props) => <Typography component="h2" variant="h4" {...props}></Typography>,
-    h2: (props) => <Typography component="h3" variant="h5" {...props}></Typography>,
-    h3: (props) => <Typography component="h4" variant="h6" {...props}></Typography>
+    p: (props) => <Typography {...props} paragraph></Typography>,
+    h1: (props) => <Typography component="h2" variant="h4" {...props} gutterBottom></Typography>,
+    h2: (props) => <Typography component="h3" variant="h5" {...props} gutterBottom></Typography>,
+    h3: (props) => <Typography component="h4" variant="h6" {...props} gutterBottom></Typography>
   }
 
   const header = () => (
