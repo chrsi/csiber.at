@@ -3,11 +3,12 @@ import { useHistory, useParams } from 'react-router';
 import { useFetch } from 'use-http';
 import classes from './BlogEntry.module.css';
 import ReactMarkdown from 'react-markdown';
-import { PrismCodeRenderer, LinkRenderer } from '../../markdown';
+import { PrismCodeRenderer, LinkRenderer, ParagraphRenderer } from '../../markdown';
 import { Button, Typography } from '@material-ui/core';
 import { useContentStyle } from '../../hooks/ContentStyleHook';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { ArrowBackIos } from '@material-ui/icons';
+import remarkHint from 'remark-hint';
 
 const BlogEntry = () => {
   const contentStyle = useContentStyle()
@@ -23,7 +24,7 @@ const BlogEntry = () => {
   const markdownComponents = {
     code: PrismCodeRenderer,
     a: LinkRenderer,
-    p: (props) => <Typography {...props} paragraph></Typography>,
+    p: ParagraphRenderer,
     h1: (props) => <Typography component="h2" variant="h4" {...props} gutterBottom></Typography>,
     h2: (props) => <Typography component="h3" variant="h5" {...props} gutterBottom></Typography>,
     h3: (props) => <Typography component="h4" variant="h6" {...props} gutterBottom></Typography>
@@ -75,7 +76,7 @@ const BlogEntry = () => {
       <section className={`${contentStyle.content} ${classes.content}`}>
         { loadingContent ?
           SkeletonText :
-          <ReactMarkdown  components={markdownComponents} children={blogContent}>
+          <ReactMarkdown  components={markdownComponents} children={blogContent} remarkPlugins={[remarkHint]}>
           </ReactMarkdown>
         }
       </section>

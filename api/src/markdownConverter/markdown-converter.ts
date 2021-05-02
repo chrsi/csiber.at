@@ -60,7 +60,7 @@ export class MarkdownConverter {
 
   public visitCallout(callout: Callout): string {
     // TODO: support for callouts
-    return ''
+    return '?> ' + callout.text
   }
 
   public visitQuote(quote: Quote): string {
