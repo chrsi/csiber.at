@@ -11,7 +11,7 @@ const Experience = props => {
   const isPrintMedia = useMediaQuery('print')
 
   return (
-    <section className={classes.experience}>
+    <section className={`${classes.experience} ${props.className}`}>
       <Typography variant="h6" component="h2" gutterBottom={!isPrintMedia}>{props.data.title}</Typography>
       <Timespan start={startDate} end={endDate} />
       <IconText icon="business" text={`${props.data.employer} (${props.data.location})`}></IconText>

@@ -1,0 +1,5 @@
+@media print {
+  .experience:nth-of-type(n+5) {
+    display: none;
+  }
+}
