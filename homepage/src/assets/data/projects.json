@@ -1,5 +1,12 @@
 [
   {
+    "name": "willhaben",
+    "description": "The largest place for online certified ads in austia",
+    "url": "https://www.willhaben.at",
+    "stack": ["java", "maven", "gradle", "spring-boot", "spring", "kafka", "sonarqube", "gitlab", "ts", "react", "jest", "cucumber", "kubernetes", "elasticsearch", "prometheus", "grafana"],
+    "teamSize": 300
+  },
+  {
     "name": "Vuzzler",
     "description": "Your digital foosball companion",
     "url": "https://www.vuzzler.com",
@@ -25,7 +32,7 @@
     "description": "A global IoT solution that connects medical devices like implant systems and sterilizers. The devices can be monitored and controlled via a web/mobile application to support dentists and service technicians in their daily business.",
     "company": "dataformers GmbH",
     "url": "https://www.wh.com/en_global/dental-solutions/iodent",
-    "stack": ["csharp", "ts", "angular", "angular-material", "azure-cosmosdb", "sqlserver", "azure-ai", "azure-ad", "azure-adb2c", "azure-storage", "azure-appservice", "azure-devops", "sass", "rxjs", "aspnetcore-webapi"],
+    "stack": ["csharp", "ts", "angular", "angular-material", "azure-cosmosdb", "sqlserver", "azure-ai", "azure-ad", "azure-adb2c", "azure-storage", "azure-appservice", "azure-devops", "sass", "rxjs", "aspnetcore-webapi", "sonarqube"],
     "teamSize": 6
   },
   {

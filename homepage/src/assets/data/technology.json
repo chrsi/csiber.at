@@ -158,5 +158,57 @@
   "xamarin": {
     "name": "Xamarin",
     "category": "Framework"
+  },
+  "java": {
+    "name": "Java",
+    "category": "Language"
+  },
+  "maven": {
+    "name": "Maven",
+    "category": "Tool"
+  },
+  "gradle": {
+    "name": "Gradle",
+    "category": "Tool"
+  },
+  "spring-boot": {
+    "name": "Spring Boot",
+    "category": "Framework"
+  },
+  "spring": {
+    "name": "Spring",
+    "category": "Library"
+  },
+  "kafka": {
+    "name": "Apache Kafka",
+    "category": "Infrastructure"
+  },
+  "sonarqube": {
+    "name": "SonarQube",
+    "category": "Tool"
+  },
+  "gitlab": {
+    "name": "GitLab",
+    "category": "Tool"
+  },
+  "cucumber": {
+    "name": "Cucumber",
+    "category": "Test"
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "category": "Infrastructure"
+  },
+  "elasticsearch": {
+    "name": "Elasticsearch",
+    "category": "Database"
+  },
+  "prometheus": {
+    "name": "Prometheus",
+    "category": "Tool"
+  },
+  "grafana": {
+    "name": "Grafana",
+    "category": "Tool"
   }
 }

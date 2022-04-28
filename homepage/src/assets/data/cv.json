@@ -41,6 +41,15 @@
   ],
   "experience": [
     {
+      "start": "2021-06-16T00:00:00.000Z",
+      "end": null,
+      "employer": "willhaben internet service GmbH & Co KG",
+      "link": "https://www.willhaben.at/",
+      "title": "Fullstack Developer",
+      "location": "Vienna, Austria",
+      "description": "Splitting the monolithic application that runs Austrias largest marketplace for certified ads. Responsible for planning and developing services in a service oriented architecture based on Kafka."
+    },
+    {
       "start": "2018-12-19T00:00:00.000Z",
       "end": null,
       "employer": "Vuzzler",
@@ -51,7 +60,7 @@
     },
     {
       "start": "2017-09-01T00:00:00.000Z",
-      "end": null,
+      "end": "2021-05-31T00:00:00.000Z",
       "employer": "Dataformers GmbH",
       "title": "Lead Developer",
       "location": "Vienna, Austria",
