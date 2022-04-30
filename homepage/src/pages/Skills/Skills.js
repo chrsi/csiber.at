@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import classes from './Skills.module.css'
+import classes from './Skills.module.css'
 import projects from 'assets/data/projects.json';
 import SkillCloud from 'components/SkillCloud/SkillCloud';
 import ProjectList from 'components/ProjectList/ProjectList';

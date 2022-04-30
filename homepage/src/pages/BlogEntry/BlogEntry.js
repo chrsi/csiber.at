@@ -1,5 +1,6 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { useFetch } from 'use-http';
 import classes from './BlogEntry.module.css';
 import ReactMarkdown from 'react-markdown';
@@ -27,10 +28,10 @@ const BlogEntry = () => {
   const { id: blogId } = useParams()
   const { data: blogContent, loading: loadingContent } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}/content`, {}, [ blogId ]);
   const { data: meta, loading: loadingMeta } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog/${blogId}`, {}, [ blogId ]);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   function navigateBack() {
-    history.goBack();
+    navigate.goBack();
   }
 
   const markdownComponents = {

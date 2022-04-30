@@ -6,8 +6,8 @@ const Skills = props => {
   return (
     <section>
       <Typography variant="h4" component="h1">Skills</Typography>
-      { props.data.map(skillGroup => (
-        <Typography component="p" gutterBottom>
+      { props.data.map((skillGroup, idx) => (
+        <Typography component="p" gutterBottom key={idx}>
           { skillGroup.join(', ') }
         </Typography>
       ))
@@ -17,7 +17,7 @@ const Skills = props => {
 };
 
 Skills.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.array
 };
 
 export default Skills;

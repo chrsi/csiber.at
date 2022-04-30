@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, makeStyles, useMediaQuery, useTheme, useScrollTrigger, Link as ReactLink } from '@material-ui/core';
+import { AppBar, Toolbar, makeStyles, useMediaQuery, useTheme, useScrollTrigger, Link } from '@material-ui/core';
 import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import './PageHeader.css';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   links:  {
@@ -33,25 +33,20 @@ const PageHeader =  () => {
     openNav(!isNavOpen)
   }
 
-  const HeaderLink = React.forwardRef((props, _) => {
-    const { navigate, ...reactLinkProps } = props;
-    return (<ReactLink underline="none" color="inherit" onClick={toggleNav} {...reactLinkProps}>{props.children}</ReactLink>)
-  })
-
   return (
     <AppBar position="sticky" elevation={trigger ? 4 : 0} color={trigger ? 'default' : 'transparent'}>
       <Toolbar>
         <nav className={`nav-bar ${isMobile ? 'mobile' : ''}`}>
           <div className="logo">
-            <Link to="/" variant="h6" component={HeaderLink}>
+            <Link to="/" variant="h6" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>
               Christian Siber
             </Link>
           </div>
           <ul className={`links ${classes.links} ${isNavOpen ? 'open' : 'closed'} navlinks`}>
-            <li><Link to="/" variant="body1" component={HeaderLink}>About</Link></li>
-            <li><Link to="/skills" variant="body1" component={HeaderLink}>Skills</Link></li>
-            <li><Link to="/cv" variant="body1" component={HeaderLink}>CV</Link></li>
-            <li><Link to="/blog" variant="body1" component={HeaderLink}>Blog</Link></li>
+            <li><Link to="/" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>About</Link></li>
+            <li><Link to="/skills" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>Skills</Link></li>
+            <li><Link to="/cv" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>CV</Link></li>
+            <li><Link to="/blog" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>Blog</Link></li>
           </ul>
           <BurgerMenu className="menu" open={isNavOpen} onChange={toggleNav}></BurgerMenu>
         </nav>

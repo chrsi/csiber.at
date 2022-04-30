@@ -2,21 +2,21 @@ import { Card, CardActionArea, CardContent, CardMedia, Typography } from '@mater
 import Skeleton from '@material-ui/lab/Skeleton';
 import { useContentStyle } from 'hooks/ContentStyleHook';
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import { useFetch } from 'use-http';
 import classes from './Blog.module.css';
 
 const Blog = () => {
   const contentStyle = useContentStyle();
   const { data = [], loading } = useFetch(`${process.env.REACT_APP_BLOG_API}/blog`, {}, []);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   /**
    * Navigate to a specified article
    * @param {string} articleId identifies the article
    */
   function navigateTo(articleId) {
-    history.push(`/blog/${articleId}`)
+    navigate(`/blog/${articleId}`)
   }
 
   /**

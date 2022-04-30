@@ -3,15 +3,15 @@ import './App.css';
 import { ThemeProvider } from "@material-ui/styles";
 import PageHeader from './components/PageHeader/PageHeader';
 import { CssBaseline } from '@material-ui/core';
-import { createMuiTheme } from '@material-ui/core';
+import { createTheme } from '@material-ui/core';
 import About from './pages/About/About';
 import Skills from './pages/Skills/Skills';
 import CurriculumVitae from './pages/CurriculumVitae/CurriculumVitae';
-import { Route, HashRouter as Router, Switch } from 'react-router-dom';
+import { Route, HashRouter as Router, Routes } from 'react-router-dom';
 import Blog from 'pages/Blog/Blog';
 import BlogEntry from 'pages/BlogEntry/BlogEntry';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     type: "dark",
     primary: {
@@ -27,23 +27,13 @@ const App = ()  => {
       <CssBaseline />
       <Router>
         <PageHeader />
-        <Switch>
-          <Route path="/skills">
-            <Skills></Skills>
-          </Route>
-          <Route path="/cv">
-            <CurriculumVitae></CurriculumVitae>
-          </Route>
-          <Route path="/blog/:id">
-            <BlogEntry></BlogEntry>
-          </Route>
-          <Route path="/blog">
-            <Blog></Blog>
-          </Route>
-          <Route path="/">
-            <About></About>
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/skills" element={<Skills/>} />
+          <Route path="/cv" element={<CurriculumVitae/>} />
+          <Route path="/blog/:id" element={<BlogEntry/>} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/" element={<About />} />
+        </Routes>
       </Router>
     </ThemeProvider>
   );
