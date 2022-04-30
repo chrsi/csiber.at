@@ -7,11 +7,11 @@ export class Code implements BlockVisitable {
   }
 
   public get text() {
-    return this.block.properties.title[0][0]
+    return this.block.code.rich_text[0].type === "text" ? this.block.code.rich_text[0].text.content : ''
   }
 
   public get language() {
-    return this.block.properties.language[0][0]
+    return this.block.code.language
   }
 
   accept(markdownConverter: MarkdownConverter): string {

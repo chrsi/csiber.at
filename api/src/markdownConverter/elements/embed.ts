@@ -1,9 +1,9 @@
 import { BlockVisitable } from "../block-visitable";
 import { MarkdownConverter } from "../markdown-converter";
-import { BookmarkBlock } from "../notion/models/notion-blocks";
+import { EmbedBlock } from "../notion/models/notion-blocks";
 
 export class Embed implements BlockVisitable {
-  constructor(private block: BookmarkBlock) {
+  constructor(private block: EmbedBlock) {
   }
 
   accept(markdownConverter: MarkdownConverter): string {

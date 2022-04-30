@@ -7,7 +7,7 @@ export class Callout implements BlockVisitable {
   }
 
   public get text() {
-    return this.block.properties.title[0][0]
+    return this.block.callout.rich_text[0].type === "text" ? this.block.callout.rich_text[0].text.content : ''
   }
 
   accept(markdownConverter: MarkdownConverter): string {

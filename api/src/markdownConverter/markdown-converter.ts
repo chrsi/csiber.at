@@ -13,7 +13,7 @@ import { Divider } from "./elements/divider";
 import { Equation } from "./elements/equation";
 import { Video } from "./elements/video";
 import { Embed } from "./elements/embed";
-import { TextElement } from "./models/textElement";
+import { TextElement } from "./text-element";
 
 export class MarkdownConverter {
   public visitHeader(header: Header): string {
@@ -29,20 +29,22 @@ export class MarkdownConverter {
   }
 
   public visitText(text: Text): string {
-    return text.text.map(t => this.formatText(t)).join('')
+    return this.convertTextElements(text.text);
+  }
+
+  public convertTextElements(textElements: TextElement[]): string {
+    const collapsedElements = this.collapseLinks(textElements);
+    const formattedElements = collapsedElements.map(t => this.formatText(t));
+    return formattedElements.map(t => this.formatLink(t).text).join('');
   }
 
   public visitBulletedList(bulletedList: BulletedList): string {
-    const text = bulletedList.text
-      .map(t => this.formatText(t))
-      .join('')
+    const text = this.convertTextElements(bulletedList.text)
     return '* ' + text
   }
 
   public visitNumberedList(numberedList: NumberedList): string {
-    const text = numberedList.text
-      .map(t => this.formatText(t))
-      .join('')
+    const text = this.convertTextElements(numberedList.text)
     return '1. ' + text;
   }
 
@@ -65,7 +67,7 @@ export class MarkdownConverter {
 
   public visitQuote(quote: Quote): string {
     return quote.text.map(t => {
-      const line = t.map(this.formatText).join('')
+      const line = this.convertTextElements(t)
       return `> ${line}  `
     }).join('\n')
   }
@@ -93,22 +95,42 @@ export class MarkdownConverter {
     return ''
   }
 
-  private formatText(textElement: TextElement): string {
-    let result = textElement.text;
+  private formatText(textElement: TextElement): TextElement {
     if(textElement.formattingOptions?.bold) {
-      result = result.replace(/^(\s*)(.*?)(\s*)$/, '$1**$2**$3')
+      textElement.text = textElement.text.replace(/^(\s*)(.*?)(\s*)$/, '$1**$2**$3')
     }
 
     if(textElement.formattingOptions?.italic) {
-      result = result.replace(/^(\s*)(.*?)(\s*)$/, '$1*$2*$3')
+      textElement.text = textElement.text.replace(/^(\s*)(.*?)(\s*)$/, '$1*$2*$3')
     }
 
-    result = result.replace('\n', '  \n');
-
-    if(textElement.formattingOptions?.link) {
-      result = `[${result}](${textElement.formattingOptions.link})`
-    }
-    return result
+    textElement.text = textElement.text.replace('\n', '  \n');
+    return textElement;
     // TODO: support for underline and strikethrough
+  }
+
+  private formatLink(textElement: TextElement): TextElement {
+    if(textElement.formattingOptions?.link) {
+      textElement.text = `[${textElement.text}](${textElement.formattingOptions.link})`
+    }
+    return textElement;
+  }
+
+  private collapseLinks(formattedElements: TextElement[]) {
+    const result = [];
+    for (let i = 0; i < formattedElements.length; ++i) {
+      if (i != 0) {
+        const element = formattedElements;
+        if (element[i].formattingOptions?.link != null &&
+          element[i - 1].formattingOptions?.link == element[i].formattingOptions?.link) {
+          result[result.length - 1].text += element[i].text;
+        } else {
+          result.push(element[i])
+        }
+      } else {
+        result.push(formattedElements[i]);
+      }
+    }
+    return result;
   }
 }

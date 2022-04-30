@@ -1,37 +1,17 @@
-import { FormattingOptions } from "../models/formattingOptions";
-import { TextElement } from "../models/textElement";
-import { Format, TextBlock } from "../notion/models";
-
-const formatterMap: { [ key in Format ]: (elem: FormattingOptions) => void } = {
-  'b': format => format.bold = true,
-  'i': format => format.italic = true,
-  's': format => format.strikethrough = true,
-  '_': format => format.underline = true,
-}
+import { text } from "stream/consumers";
+import { TextElement } from "../text-element";
+import { Format } from "../notion/models";
+import { RichTextBlock, TextBlock } from "../notion/models/rich-text-block";
 
 export function createTextElement(textBlock: TextBlock): TextElement {
-  const [text, formatOptions] = textBlock
-  const result: TextElement = { text };
-
-  if (formatOptions) {
-    result.formattingOptions = {
-      bold: false,
-      italic: false,
-      strikethrough: false,
-      underline: false
+  return {
+    text: textBlock.text.content,
+    formattingOptions: {
+      bold: textBlock.annotations.bold,
+      italic: textBlock.annotations.italic,
+      strikethrough: textBlock.annotations.strikethrough,
+      underline: textBlock.annotations.underline,
+      link: textBlock.text.link?.url
     }
-
-    formatOptions.forEach(([ format, additionalFormatOption ]) => {
-      if (format === 'a') {
-        result.formattingOptions!.link = additionalFormatOption
-      } else {
-        const formatting = formatterMap[format];
-        if (formatting) {
-          formatting(result.formattingOptions!);
-        }
-      }
-    })
   }
-
-  return result;
 }

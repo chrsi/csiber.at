@@ -1,85 +1,95 @@
-import { BlockTypes } from ".";
-import { TextPropertiesBlock, ToDoPropertiesBlock, CodePropertiesBlock, BookmarkPropertiesBlock, ImagePropertiesBlock } from ".";
-import { VideoPropertiesBlock } from "./properties-block";
+import { BlockTypes } from "./block-types";
+import { RichTextBlock } from "./rich-text-block";
 
-interface CalloutFormat {
-  page_icon: string,
-  block_color: string
+export type BulletedListBlock = {
+  type: 'bulleted_list_item',
+  bulleted_list_item: { rich_text: RichTextBlock[] }
 }
 
-interface ImageFormat {
-  block_width: number,
-  display_source: string,
-  block_full_width: boolean,
-  block_page_width: boolean
+export type NumberedListBlock = {
+  type: 'numbered_list_item',
+  numbered_list_item: { rich_text: RichTextBlock[] }
 }
 
-interface VideoFormat {
-  block_width: number,
-  display_source: string,
-  block_full_width: boolean,
-  block_page_width: boolean
+export type HeaderBlock = {
+  type: 'heading_1',
+  heading_1: { rich_text: RichTextBlock[] }
 }
 
-export type GeneralBlock = {
-  type: BlockTypes.Text |
-        BlockTypes.NumberedList |
-        BlockTypes.BulletedList |
-        BlockTypes.Quote |
-        BlockTypes.Header |
-        BlockTypes.SubHeader |
-        BlockTypes.SubSubHeader |
-        BlockTypes.Equation,
-  properties: TextPropertiesBlock,
+export type SubHeaderBlock = {
+  type: 'heading_2',
+  heading_2: { rich_text: RichTextBlock[] }
+}
+
+export type SubSubHeaderBlock = {
+  type: 'heading_3',
+  heading_3: { rich_text: RichTextBlock[] }
+}
+
+export type EquationBlock = {
+  type: 'equation',
+}
+
+export type QuoteBlock = {
+  type: 'quote',
+  quote: {
+    rich_text: RichTextBlock[]
+  }
 }
 
 export type DividerBlock = {
-  type: BlockTypes.Divider
+  type: "divider"
 }
 
 export type CalloutBlock = {
-  type: BlockTypes.Callout,
-  properties: TextPropertiesBlock
-  format: CalloutFormat
+  type: 'callout',
+  callout: {
+    rich_text: RichTextBlock[]
+  }
 }
 
 export type TodoBlock = {
-  type: BlockTypes.ToDo,
-  properties: ToDoPropertiesBlock
+  type: 'to_do',
+  to_do: {
+    rich_text: RichTextBlock[],
+    checked: boolean
+  }
 }
 
 export type CodeBlock = {
-  type: BlockTypes.Code,
-  properties: CodePropertiesBlock
+  type: 'code',
+  code: {
+    rich_text: RichTextBlock[],
+    language: string
+  }
 }
 
 export type ImageBlock = {
-  type: BlockTypes.Image,
-  properties: ImagePropertiesBlock,
-  format: ImageFormat
+  type: "image",
+  image: ImageBlockExternal | ImageBlockFile
+}
+
+export type ImageBlockExternal = {
+  caption: RichTextBlock[],
+  type: "external",
+  external: {
+    url: string
+  }
+}
+
+export type ImageBlockFile = {
+  caption: RichTextBlock[],
+  type: "file"
 }
 
 export type VideoBlock = {
-  type: BlockTypes.Video,
-  properties: VideoPropertiesBlock,
-  format: VideoFormat
+  type: "video",
 }
 
-export type BookmarkBlock = {
-  type: BlockTypes.Embed,
-  properties: BookmarkPropertiesBlock
+export type EmbedBlock = {
+  type: "embed",
 }
 
 export type EmptyBlock = {
   type: BlockTypes.Text
 }
-
-export type NotionBlock = GeneralBlock |
-  CalloutBlock |
-  TodoBlock |
-  CodeBlock |
-  ImageBlock |
-  VideoBlock |
-  BookmarkBlock |
-  EmptyBlock |
-  DividerBlock;

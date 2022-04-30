@@ -1,143 +1,83 @@
 import { convert } from "../../markdownConverter/notion-converter";
 import { parseNotion } from "../../markdownConverter/notion/notion-parser";
 import { BlogPost } from "../../models/blog-post";
-import { NotionBlogPost } from "./models/notion-blog-post";
-import { parseNotionQuery, parseNotionSpecificQuery } from "./notion-parser";
-
-const got = require('got');
+import { Client } from "@notionhq/client"
 
 const QUERY_PATH = '/api/v3/queryCollection'
 const QURY_SPECIFIC_PATH = '/api/v3/syncRecordValues'
 const CONTENT_PATH = '/api/v3/loadPageChunk'
 
-const collectionQuery = {
-  collectionId: process.env.NOTION_COLLECTIONID,
-  collectionViewId: process.env.NOTION_COLLECTIONVIEWID,
-  query:{
-     filter:{
-        filters:[
-           {
-              filter:{
-                 value:{
-                    type:"exact",
-                    value:"Published"
-                 },
-                 operator:"enum_is"
-              },
-              property:"RxmV"
-           }
-        ],
-        operator:"and"
-     },
-     aggregations:[
-        {
-           aggregator:"count"
-        }
-     ]
-  },
-  loader:{
-     type:"table",
-     limit:1000,
-     searchQuery:"",
-     userTimeZone:"Europe/Vienna",
-     loadContentCover:true
-  }
-}
+const notion = new Client({ auth: process.env.NOTION_SECRET })
 
 async function getAllIds(): Promise<BlogPost[]> {
-  const { body } = await got.post(`${process.env.NOTION_HOST}${QUERY_PATH}`, {
-    json: collectionQuery,
-    responseType: 'json'
-  })
+  const database_id = process.env.NOTION_BLOG_DBID;
+  if (database_id == null) {
+    console.error('No database id defined')
+    return Promise.resolve([]);
+  }
 
-  return parseNotionQuery(body).map(post => ({
-    id: post.id,
-    title: post.title,
-    description: post.description,
-    publishDate: post.publishDate,
-    image: post.image?.smallImage
-  }));
+  const response = await notion.databases.query({
+    database_id,
+    filter: {
+      property: 'State',
+      select: {
+        equals: 'Published'
+      }
+    },
+    sorts: [
+      {
+        property: 'Published',
+        direction: 'descending'
+      }
+    ]
+  });
+
+  return response.results.filter(post => "properties" in post).map(post => {
+    const title = "properties" in post && "title" in post.properties.Name ? post.properties.Name.title[0].plain_text : '';
+    const description = "properties" in post && "rich_text" in post.properties.Description ? post.properties.Description['rich_text'][0]?.plain_text : '';
+    const publishDate = "properties" in post && "date" in post.properties.Published ? post.properties.Published.date?.start : '';
+    const image = "cover" in post && post.cover != null && "external" in post.cover ? post.cover.external.url : undefined;
+
+    return {
+        id: post.id,
+        title,
+        description,
+        publishDate,
+        image
+    }
+  });
 }
 
 async function render(id: string) {
-  const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QURY_SPECIFIC_PATH}`, {
-    json: {
-      requests: [
-        {
-          id,
-          table: "block",
-          version: -1
-        }
-      ]
-    },
-    responseType: 'json'
-  })
-
-  if(!overview.recordMap.block[id].value) {
-    throw Error("Could not read Notion doc with this ID - make sure public access is enabled");
-  }
-
-  const contentIds: any[] = overview.recordMap.block[id].value.content
-
-  const content: any[] = []
-  let recordMap: any = {}
-  let lastChunk
-  let hasMorePageChunks = true
-
-  while(hasMorePageChunks) {
-    const cursor: any = lastChunk && lastChunk.cursor || ({ stack: [] })
-
-    const {body: chunk} = await got.post(`${process.env.NOTION_HOST}${CONTENT_PATH}`, {
-      json: {
-        pageId: id,
-        limit: 100,
-        cursor,
-        chunkNumber: 0,
-        verticalColumns: false
-      },
-      responseType: 'json'
-    })
-
-    recordMap = { ...recordMap, ...chunk.recordMap.block }
-
-    lastChunk = chunk
-
-    if(chunk.cursor.stack.length === 0) hasMorePageChunks = false
-  }
-
-  contentIds.forEach(id => {
-    const block = recordMap[id]
-    if(block) content.push(block.value)
-  })
-
+  const content = await notion.blocks.children.list({
+    block_id: id,
+    page_size: 50,
+  });
   const notionBlocks = parseNotion(content);
   return convert(notionBlocks);
 }
 
 async function getById(id: string): Promise<BlogPost | null> {
-  const { body: overview } = await got.post(`${process.env.NOTION_HOST}${QURY_SPECIFIC_PATH}`, {
-    json: {
-      requests: [
-        {
-          id,
-          table: "block",
-          version: -1
-        }
-      ]
-    },
-    responseType: 'json'
-  })
+  let notionResponse
+  try {
+    notionResponse = await notion.pages.retrieve({ page_id: id });
+  } catch (APIResponseError) {
+    return null;
+  }
 
-  const post = parseNotionSpecificQuery(overview, id);
-  return post !== null ?
-    {
-      id: post.id,
-      title: post.title,
-      description: post.title,
-      publishDate: post.publishDate,
-      image: post.image?.largeImage
-    } :
-    null
+  const post = notionResponse;
+  const title = "properties" in post && "title" in post.properties.Name ? post.properties.Name.title[0].plain_text : '';
+  const description = "properties" in post && "rich_text" in post.properties.Description ? post.properties.Description['rich_text'][0].plain_text : '';
+  const publishDate = "properties" in post && "date" in post.properties.Published ? post.properties.Published.date?.start : '';
+  const image = "cover" in post && post.cover != null && "external" in post.cover ? post.cover.external.url : undefined;
+
+  return {
+    id: post.id,
+    title,
+    description,
+    publishDate,
+    image
+  }
 }
 
 

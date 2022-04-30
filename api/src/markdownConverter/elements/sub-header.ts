@@ -1,13 +1,13 @@
 import { BlockVisitable } from "../block-visitable";
 import { MarkdownConverter } from "../markdown-converter";
-import { GeneralBlock } from "../notion/models/notion-blocks";
+import { SubHeaderBlock } from "../notion/models/notion-blocks";
 
 export class SubHeader implements BlockVisitable {
-  constructor(private block: GeneralBlock) {
+  constructor(private block: SubHeaderBlock) {
   }
 
   public get text() {
-    return this.block.properties.title[0][0]
+    return this.block.heading_2.rich_text[0].type === "text" ? this.block.heading_2.rich_text[0].text.content : ''
   }
 
   accept(markdownConverter: MarkdownConverter): string {

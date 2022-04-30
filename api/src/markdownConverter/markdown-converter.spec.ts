@@ -12,18 +12,26 @@ describe('Markdown Converter', () => {
   describe('Converting Text', () => {
     it('supports bold formatted links', () => {
       const text = new Text({
-        properties: {
-          title: [
-            [
-              'Test',
-              [
-                [ 'b' ],
-                [ 'a', 'Some Link'],
-              ]
-            ]
+        paragraph: {
+          rich_text: [
+            {
+              type: 'text',
+              text: {
+                content: 'Test',
+                link: {
+                  url: 'Some Link'
+                }
+              },
+              annotations: {
+                bold: true,
+                italic: false,
+                code: false,
+                strikethrough: false,
+                underline: false
+              }
+            }
           ]
-        },
-        type: BlockTypes.Text
+        }
       })
 
       const result = converter.visitText(text);
@@ -32,24 +40,42 @@ describe('Markdown Converter', () => {
 
     it('collapses formatted link elements', () => {
       const text = new Text({
-        properties: {
-          title: [
-            [
-              'Some',
-              [
-                [ 'a', 'url' ],
-              ]
-            ],
-            [
-              'Link',
-              [
-                [ 'b' ],
-                [ 'a', 'url'],
-              ]
-            ]
+        paragraph: {
+          rich_text: [
+            {
+              type: 'text',
+              text: {
+                content: 'Some',
+                link: {
+                  url: 'url'
+                }
+              },
+              annotations: {
+                bold: false,
+                italic: false,
+                code: false,
+                strikethrough: false,
+                underline: false
+              }
+            },
+            {
+              type: 'text',
+              text: {
+                content: ' Link',
+                link: {
+                  url: 'url'
+                }
+              },
+              annotations: {
+                bold: true,
+                italic: false,
+                code: false,
+                strikethrough: false,
+                underline: false
+              }
+            }
           ]
-        },
-        type: BlockTypes.Text
+        }
       })
 
       const result = converter.visitText(text);
@@ -58,17 +84,24 @@ describe('Markdown Converter', () => {
 
     it('doesn\'t include trailing and leading whitespaces when formatting', () => {
         const text = new Text({
-          properties: {
-            title: [
-              [
-                ' bold text ',
-                [
-                  [ 'b' ]
-                ]
-              ]
+          paragraph: {
+            rich_text: [
+              {
+                type: 'text',
+                text: {
+                  content: ' bold text ',
+                  link: null
+                },
+                annotations: {
+                  bold: true,
+                  italic: false,
+                  code: false,
+                  strikethrough: false,
+                  underline: false
+                }
+              }
             ]
-          },
-          type: BlockTypes.Text
+          }
         })
 
         const result = converter.visitText(text);
@@ -77,17 +110,24 @@ describe('Markdown Converter', () => {
 
       it('creates bold formatted text', () => {
         const text = new Text({
-          properties: {
-            title: [
-              [
-                'bold text',
-                [
-                  [ 'b' ]
-                ]
-              ]
+          paragraph: {
+            rich_text: [
+              {
+                type: 'text',
+                text: {
+                  content: 'bold text',
+                  link: null
+                },
+                annotations: {
+                  bold: true,
+                  italic: false,
+                  code: false,
+                  strikethrough: false,
+                  underline: false
+                }
+              }
             ]
-          },
-          type: BlockTypes.Text
+          }
         })
 
         const result = converter.visitText(text);
@@ -96,17 +136,24 @@ describe('Markdown Converter', () => {
 
       it('creates italic formatted text', () => {
         const text = new Text({
-          properties: {
-            title: [
-              [
-                'bold text',
-                [
-                  [ 'i' ]
-                ]
-              ]
+          paragraph: {
+            rich_text: [
+              {
+                type: 'text',
+                text: {
+                  content: 'bold text',
+                  link: null
+                },
+                annotations: {
+                  bold: false,
+                  italic: true,
+                  code: false,
+                  strikethrough: false,
+                  underline: false
+                }
+              }
             ]
-          },
-          type: BlockTypes.Text
+          }
         })
 
         const result = converter.visitText(text);
@@ -114,19 +161,24 @@ describe('Markdown Converter', () => {
       })
 
       it('supports text with multiple formats', () => {
-        const text = new Text({
-          properties: {
-            title: [
-              [
-                'bold text',
-                [
-                  [ 'i' ],
-                  [ 'b' ]
-                ]
-              ]
-            ]
-          },
-          type: BlockTypes.Text
+        const text = new Text({paragraph: {
+          rich_text: [
+            {
+              type: 'text',
+              text: {
+                content: 'bold text',
+                link: null
+              },
+              annotations: {
+                bold: true,
+                italic: true,
+                code: false,
+                strikethrough: false,
+                underline: false
+              }
+            }
+          ]
+        }
         })
 
         const result = converter.visitText(text);
@@ -135,14 +187,24 @@ describe('Markdown Converter', () => {
 
       it('appends two spaces when breaking a line', () => {
         const text = new Text({
-          properties: {
-            title: [
-              [
-                'some text\nwith line-break',
-              ]
+          paragraph: {
+            rich_text: [
+              {
+                type: 'text',
+                text: {
+                  content: 'some text\nwith line-break',
+                  link: null
+                },
+                annotations: {
+                  bold: false,
+                  italic: false,
+                  code: false,
+                  strikethrough: false,
+                  underline: false
+                }
+              }
             ]
-          },
-          type: BlockTypes.Text
+          }
         })
 
         const result = converter.visitText(text);

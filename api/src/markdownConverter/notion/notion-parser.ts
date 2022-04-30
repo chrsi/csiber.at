@@ -5,7 +5,6 @@ import { Header } from "../elements/header";
 import { Text } from "../elements/text";
 import { SubHeader } from "../elements/sub-header";
 import { SubSubHeader } from "../elements/sub-sub-header";
-import { NotionBlock } from "./models/notion-blocks";
 import { NumberedList } from "../elements/numbered-list";
 import { ToDo } from "../elements/todo";
 import { Code } from "../elements/code";
@@ -16,9 +15,14 @@ import { Image } from "../elements/image";
 import { Equation } from "../elements/equation";
 import { Embed } from "../elements/embed";
 import { Video } from "../elements/video";
+import { ListBlockChildrenResponse } from "@notionhq/client/build/src/api-endpoints";
 
-export const parseNotion = (content: NotionBlock[]): BlockVisitable[] => {
+export const parseNotion = (res: ListBlockChildrenResponse): BlockVisitable[] => {
+  const content = res.results;
+
   return content.map(block => {
+    if ("type" in block) {} else {throw new Error()}
+
     switch(block.type) {
       case BlockTypes.Text:
         return new Text(block)

@@ -1,23 +1,52 @@
-import { TextBlock } from "../notion/models"
+import { TextBlock } from "../notion/models/rich-text-block"
 import { createTextElement } from "./textElementParser"
 
 describe('Text Element Parser', () => {
   it('properly parses unformatted text', () => {
-    const text: TextBlock = [
-      'some unformatted text',
-    ]
+    const text: TextBlock = {
+      type: 'text',
+      text: {
+        content: 'some unformatted text',
+        link: null
+      },
+      annotations: {
+        bold: false,
+        code: false,
+        italic: false,
+        strikethrough: false,
+        underline: false
+      }
+    }
+
     const textElement = createTextElement(text)
     expect(textElement.text).toBe('some unformatted text')
-    expect(textElement.formattingOptions).toBeUndefined()
+    expect(textElement.formattingOptions).toEqual({
+      bold: false,
+      italic: false,
+      link: undefined,
+      strikethrough: false,
+      underline: false
+    })
   })
 
   it('properly parses links', () => {
-    const linkElement: TextBlock = [
-      'linkTitle',
-      [
-        [ 'a', 'link-url' ]
-      ]
-    ]
+    const linkElement: TextBlock = {
+      type: 'text',
+      text: {
+        content: 'linkTitle',
+        link: {
+          url: 'link-url'
+        }
+      },
+      annotations: {
+        bold: false,
+        code: false,
+        italic: false,
+        strikethrough: false,
+        underline: false
+      }
+    }
+
     const textElement = createTextElement(linkElement)
     expect(textElement.formattingOptions).toEqual({
       bold: false,
@@ -29,12 +58,21 @@ describe('Text Element Parser', () => {
   })
 
   it('properly parses bold text', () => {
-    const boldElement: TextBlock = [
-      'bold text',
-      [
-        [ 'b' ]
-      ]
-    ]
+    const boldElement: TextBlock = {
+      type: 'text',
+      text: {
+        content: 'bold text',
+        link: null
+      },
+      annotations: {
+        bold: true,
+        code: false,
+        italic: false,
+        strikethrough: false,
+        underline: false
+      }
+    }
+
     const textElement = createTextElement(boldElement)
     expect(textElement.formattingOptions).toEqual({
       bold: true,
@@ -46,12 +84,21 @@ describe('Text Element Parser', () => {
   })
 
   it('properly parses italic text', () => {
-    const italicElement: TextBlock = [
-      'italic text',
-      [
-        [ 'i' ]
-      ]
-    ]
+    const italicElement: TextBlock = {
+      type: 'text',
+      text: {
+        content: 'italic text',
+        link: null
+      },
+      annotations: {
+        bold: false,
+        code: false,
+        italic: true,
+        strikethrough: false,
+        underline: false
+      }
+    }
+
     const textElement = createTextElement(italicElement)
     expect(textElement.formattingOptions).toEqual({
       bold: false,
@@ -63,12 +110,21 @@ describe('Text Element Parser', () => {
   })
 
   it('properly parses underlined text', () => {
-    const underlinedElement: TextBlock = [
-      'underlined text',
-      [
-        [ '_' ]
-      ]
-    ]
+    const underlinedElement: TextBlock = {
+      type: 'text',
+      text: {
+        content: 'underlined text',
+        link: null
+      },
+      annotations: {
+        bold: false,
+        code: false,
+        italic: false,
+        strikethrough: false,
+        underline: true
+      }
+    }
+    
     const textElement = createTextElement(underlinedElement)
     expect(textElement.formattingOptions).toEqual({
       bold: false,
@@ -80,12 +136,21 @@ describe('Text Element Parser', () => {
   })
 
   it('properly parses strikedthrough text', () => {
-    const strikedthroughElement: TextBlock = [
-      'strikedthrough text',
-      [
-        [ 's' ]
-      ]
-    ]
+    const strikedthroughElement: TextBlock = {
+      type: 'text',
+      text: {
+        content: 'strikedthrough text',
+        link: null
+      },
+      annotations: {
+        bold: false,
+        code: false,
+        italic: false,
+        strikethrough: true,
+        underline: false
+      }
+    }
+    
     const textElement = createTextElement(strikedthroughElement)
     expect(textElement.formattingOptions).toEqual({
       bold: false,
