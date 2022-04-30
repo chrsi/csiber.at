@@ -38,7 +38,7 @@ const PageHeader =  () => {
       <Toolbar>
         <nav className={`nav-bar ${isMobile ? 'mobile' : ''}`}>
           <div className="logo">
-            <Link to="/" variant="h6" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>
+            <Link to="/" variant="h6" underline="none" color="inherit" component={RouterLink}>
               Christian Siber
             </Link>
           </div>
