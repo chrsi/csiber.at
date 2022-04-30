@@ -31,7 +31,11 @@ const BlogEntry = () => {
   const navigate = useNavigate();
 
   function navigateBack() {
-    navigate.goBack();
+    if (window.history.state && window.history.state.idx > 0) {
+      navigate(-1);
+    } else {
+        navigate('/blog', { replace: true });
+    }
   }
 
   const markdownComponents = {
