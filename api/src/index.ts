@@ -6,6 +6,7 @@ const app = express()
 import cors from 'cors'
 
 const blogController = require('./controller/blogController')
+const healthController = require('./controller/healthController')
 
 const port = process.env.PORT;
 
@@ -21,6 +22,7 @@ app.use(cors({
 }))
 
 app.use('/api/blog', blogController);
+app.use('/api/health', healthController);
 
 app.listen(port, () => {
   console.log(`csiber.at notion gateway listening at http://localhost:${port}`)
