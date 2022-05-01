@@ -4,7 +4,7 @@ import projects from 'assets/data/projects.json';
 import WordCloud from 'wordcloud'
 import classes from './SkillCloud.module.css';
 import { getTechName } from 'utils/Technology';
-import { normalizeSkills, countSkills } from 'utils/Skill';
+import { normalizeSkills, mergeSkills, evaluateSkill } from 'utils/Skill';
 
 const applyDisplayNames = (skill) => {
   const techKey = skill[0];
@@ -12,9 +12,15 @@ const applyDisplayNames = (skill) => {
   return [displayName, skill[1], techKey];
 }
 
+const formatForWordCloud = (skill) => {
+  return [ skill.name, skill.score ]
+}
+
 const skills = projects
-  .flatMap(val => val.stack)
-  .reduce(countSkills, [])
+  .flatMap(({ stack, start, end, weight }) => stack.map(name => ({ name, start, end, weight })))
+  .reduce(mergeSkills, [])
+  .map(evaluateSkill)
+  .map(formatForWordCloud)
   .map(applyDisplayNames)
   .sort((a, b) => b[1]-a[1])
   .map(normalizeSkills(10, 40))
