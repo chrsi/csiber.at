@@ -1,0 +1,14 @@
+# .github/workflows/scheduled-builds.yml
+name: Keep Heroku API awake
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch
+jobs:
+  build:
+    name: Call API
+    runs-on: ubuntu-latest
+    steps:
+      - name: cURL request
+        run: curl ${{ secrets.API_URL }}
