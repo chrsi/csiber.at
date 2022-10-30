@@ -51,7 +51,6 @@ async function getAllIds(): Promise<BlogPost[]> {
 async function render(id: string) {
   const content = await notion.blocks.children.list({
     block_id: id,
-    page_size: 50,
   });
   const notionBlocks = parseNotion(content);
   return convert(notionBlocks);
