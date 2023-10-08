@@ -8,8 +8,6 @@ import About from './pages/About/About';
 import Skills from './pages/Skills/Skills';
 import CurriculumVitae from './pages/CurriculumVitae/CurriculumVitae';
 import { Route, HashRouter as Router, Routes } from 'react-router-dom';
-import Blog from 'pages/Blog/Blog';
-import BlogEntry from 'pages/BlogEntry/BlogEntry';
 
 const theme = createTheme({
   palette: {
@@ -30,8 +28,6 @@ const App = ()  => {
         <Routes>
           <Route path="/skills" element={<Skills/>} />
           <Route path="/cv" element={<CurriculumVitae/>} />
-          <Route path="/blog/:id" element={<BlogEntry/>} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/" element={<About />} />
         </Routes>
       </Router>

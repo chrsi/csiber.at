@@ -46,7 +46,6 @@ const PageHeader =  () => {
             <li><Link to="/" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>About</Link></li>
             <li><Link to="/skills" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>Skills</Link></li>
             <li><Link to="/cv" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>CV</Link></li>
-            <li><Link to="/blog" variant="body1" underline="none" color="inherit" onClick={toggleNav} component={RouterLink}>Blog</Link></li>
           </ul>
           <BurgerMenu className="menu" open={isNavOpen} onChange={toggleNav}></BurgerMenu>
         </nav>
