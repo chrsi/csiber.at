@@ -35,6 +35,15 @@
   ],
   "experience": [
     {
+      "start": "2023-12-01T00:00:00.000Z",
+      "end": null,
+      "employer": "Udemy - Learn Micronaut - cloud native microservices with Java",
+      "link": "https://www.udemy.com/course/learn-micronaut/",
+      "title": "Udemy Co-Instructor",
+      "location": "Vienna, Austria",
+      "description": "Together with Daniel Prinz I teach people how to use the Micronaut Framework in a real life szenarios. Micronaut is a modern, full-stack framework for the cloud which can run natively on GraalVM."
+    },
+    {
       "start": "2021-06-16T00:00:00.000Z",
       "end": null,
       "employer": "willhaben internet service GmbH & Co KG",
@@ -45,7 +54,7 @@
     },
     {
       "start": "2018-12-19T00:00:00.000Z",
-      "end": null,
+      "end": "2022-06-25T00:00:00.000Z",
       "employer": "Vuzzler",
       "link": "https://vuzzler.com",
       "title": "Creator",
@@ -67,14 +76,6 @@
       "title": "Application Development .NET",
       "description": "Working on various fintech-applications for the Erste Group Service Center as well as every Erste Bank branch.",
       "location": "Vienna, Austria"
-    },
-    {
-      "start": "2015-04-01T00:00:00.000Z",
-      "end": "2017-01-01T00:00:00.000Z",
-      "employer": "bet-at-home.com Entertainment GmbH",
-      "title": "Software Engineer ASP.NET",
-      "description": "Developing features for an international and highly scalable betting platform.\nImplementating multiple REST and SOAP services that stub various third party services for testing. Responsible for the architecture and design of a website to monitor and configure those services.",
-      "location": "Linz, Austria"
     }
   ],
   "accomplishments": [
