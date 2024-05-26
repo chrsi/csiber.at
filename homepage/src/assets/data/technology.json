@@ -210,5 +210,17 @@
   "grafana": {
     "name": "Grafana",
     "category": "Tool"
+  },
+  "terraform": {
+    "name": "Terraform",
+    "category": "Infrastructure"
+  }, 
+  "snowflake": {
+    "name": "Snowflake",
+    "category": "Tool"
+  },
+  "aws-keyspaces": {
+    "name": "AWS Keyspaces",
+    "category": "Database"
   }
 }
