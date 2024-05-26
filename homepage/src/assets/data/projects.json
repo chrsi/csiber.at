@@ -16,7 +16,7 @@
     "stack": ["csharp", "js", "css", "vue", "vuex", "signalr", "indesign", "illustrator", "ef", "cordova", "storyblok", "azure-ai", "vuetify", "firebase", "sqlserver", "material", "pwa", "azure-appservice", "azure-devops", "aspnetcore-webapi"],
     "teamSize": 1,
     "start": "2018-12-19T00:00:00.000Z",
-    "end": null,
+    "end": "2022-06-25T00:00:00.000Z",
     "weight": 50
   },
   {
