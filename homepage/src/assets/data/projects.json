@@ -3,7 +3,7 @@
     "name": "willhaben",
     "description": "Austrias biggest digital marketplace for certified ads",
     "url": "https://www.willhaben.at",
-    "stack": ["java", "maven", "gradle", "spring-boot", "spring", "kafka", "sonarqube", "gitlab", "ts", "react", "jest", "cucumber", "kubernetes", "elasticsearch", "prometheus", "grafana"],
+    "stack": ["java", "maven", "gradle", "spring-boot", "spring", "kafka", "sonarqube", "gitlab", "ts", "react", "jest", "cucumber", "kubernetes", "elasticsearch", "prometheus", "grafana", "terraform", "snowflake", "aws-keyspaces"],
     "teamSize": 300,
     "start": "2021-06-16T00:00:00.000Z",
     "end": null,
