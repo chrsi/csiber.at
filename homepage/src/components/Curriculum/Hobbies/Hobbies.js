@@ -5,22 +5,22 @@ import RoundedIcon from 'components/RoundedIcon/RoundedIcon';
 import CrossfitIcon from 'assets/icons/hobbies/crossfit.svg';
 import DevelopmentIcon from 'assets/icons/hobbies/development.svg';
 import CyclingIcon from 'assets/icons/hobbies/cycling.svg';
-import FoosballIcon from 'assets/icons/hobbies/foosball.svg';
+import LanguagesIcon from 'assets/icons/hobbies/language.svg';
+import MicrophoneIcon from 'assets/icons/hobbies/mic.svg';
 import SourdoughIcon from 'assets/icons/hobbies/sourdough.svg';
+import JarIcon from 'assets/icons/hobbies/jar.svg';
 import VolleyballIcon from 'assets/icons/hobbies/volleyball.svg';
-import YogaIcon from 'assets/icons/hobbies/yoga.svg';
-import DrawingIcon from 'assets/icons/hobbies/drawing.svg';
 import { Typography } from '@material-ui/core';
 
 const hobbyIcons = {
   "Software & Product Development": DevelopmentIcon,
-  "Crossfit": CrossfitIcon,
+  "Fitness & Sport": CrossfitIcon,
   "Volleyball": VolleyballIcon,
+  "Learning Languages": LanguagesIcon,
   "Biking": CyclingIcon,
-  "Drawing": DrawingIcon,
-  "Foosball": FoosballIcon,
-  "Baking / Sourdough": SourdoughIcon,
-  "Yoga & Meditation": YogaIcon
+  "Music & Art": MicrophoneIcon,
+  "Cooking & Backing": SourdoughIcon,
+  "Fermenting": JarIcon,
 }
 
 const Hobbies = props => {

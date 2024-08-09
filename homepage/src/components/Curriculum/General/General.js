@@ -20,12 +20,16 @@ const General = props => {
 
         <Typography component="span" style={{ gridColumnStart: 1, gridRowStart: 3 }}className={classes.infoField}>Birthday</Typography>
         <Typography component="span" style={{ gridColumnStart: 2, gridRowStart: 3 }}>{birthDate}</Typography>
+
+        <Typography component="span" style={{ gridColumnStart: 1, gridRowStart: 4 }}className={classes.infoField}>Speaking</Typography>
+        <Typography component="span" style={{ gridColumnStart: 2, gridRowStart: 4 }}>{props.data.languages}</Typography>
       </section>
       <section className={classes.infoBoxPrint}>
         <Typography variant="h5" component="p" className={classes.name}>{props.data.name}</Typography>
         <Typography variant="h6" component="p" gutterBottom>{props.data.profession}</Typography>
         <Typography component="p">Living in: {props.data.residency}</Typography>
         <Typography component="p" gutterBottom>Born: {birthDate}</Typography>
+        <Typography component="p" gutterBottom>Speaking: {props.data.languages}</Typography>
         { props.data.contact.phone && <Typography component="p">Phone: {props.data.contact.phone}</Typography>}
         { props.data.contact.email && <Typography component="p">Email: {props.data.contact.email}</Typography>}
         <Typography component="p">Web: {props.data.contact.website}</Typography>

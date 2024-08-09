@@ -2,6 +2,7 @@
   "general": {
     "name": "Christian Siber, MSc",
     "profession": "Fullstack Developer",
+    "languages": "German, English, Spanish, Portuguese",
     "img": "/assets/images/me.jpg",
     "dateOfBirth": "1991-05-29T00:00:00.000Z",
     "birthplace": "Salzburg, Austria",
@@ -11,7 +12,7 @@
       "email": null,
       "phone": null
     },
-    "description": "A software developer who loves every aspect of digital product creation. From problem solving, finding innovative solutions, refining user stories, designing stunning user interfaces, creating awesome user experiences, to building sustainable software architectures and implementing them."
+    "description": "A software developer who loves every aspect of digital product creation. From inovative problem solving, refining user stories, designing stunning UIs, creating awesome user experiences, to building sustainable software."
   },
   "education": [
     {
@@ -50,12 +51,12 @@
       "link": "https://www.willhaben.at/",
       "title": "Fullstack Developer",
       "location": "Vienna, Austria",
-      "description": "Splitting the monolithic application that runs Austrias largest marketplace for certified ads. Responsible for planning and developing services in a service oriented architecture based on Kafka."
+      "description": "Splitting the monolithic application that runs Austrias largest marketplace for certified ads. Responsible for planning and developing services in a service oriented architecture based on Kafka. Building a modern state-of-the-art application for Real Estate Agents."
     },
     {
       "start": "2018-12-19T00:00:00.000Z",
       "end": "2022-06-25T00:00:00.000Z",
-      "employer": "Vuzzler",
+      "employer": "Vuzzler (Offline)",
       "link": "https://vuzzler.com",
       "title": "Creator",
       "location": "Vienna, Austria",
@@ -67,7 +68,7 @@
       "employer": "Dataformers GmbH",
       "title": "Lead Developer",
       "location": "Vienna, Austria",
-      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer and technical lead. Integrating the IoT Hub into an existing ecosystem to connect medical devices around the world."
+      "description": "Setting up and implementing projects in the public and medical sector as a fullstack developer and technical lead. Close support for external Product Owners. Integrating the IoT Hub into an existing ecosystem to connect medical devices around the world."
     },
     {
       "start": "2017-03-01T00:00:00.000Z",
@@ -111,21 +112,21 @@
   ],
   "hobbies": [
     "Software & Product Development",
-    "Crossfit",
+    "Fitness & Sport",
     "Volleyball",
     "Biking",
-    "Drawing",
-    "Foosball",
-    "Baking / Sourdough",
-    "Yoga & Meditation"
+    "Music & Art",
+    "Learning Languages",
+    "Cooking & Backing",
+    "Fermenting"
   ],
   "skills": [
-    ["C#", "Javascript", "Typescript", "HTML", "CSS", "SASS"],
-    ["Angular", "Vue", "React", "RxJS", "Jest", "Cordova", "Vuex", "Vuetify", "GraphQL", "webpack"],
-    ["SignalR", "Entity Framework", "ASP.NET MVC / WebApi", "Moq", "XUnit"],
-    ["Sql Server", "CosmosDb"],
+    ["Java", "C#", "Javascript", "Typescript", "HTML", "CSS", "SASS"],
+    ["Vue", "React", "RxJS", "Jest", "Vuex", "Vuetify", "GraphQL", "webpack"],
+    ["Spring Framework", "Hibernate", "Prometheus", "SignalR", "Entity Framework", "ASP.NET MVC / WebApi", "OAuth"],
+    ["Kafka", "Elastic Search", "Postgres", "Sql Server"],
     ["Material", "Bootstrap"],
-    ["Azure", "Azure DevOps", "Jira", "Confluence", "Firebase", "Active Directory"],
-    ["Visual Studio", "Visual Studio Code", "VIM", "Photoshop", "Illustrator", "CI/CD", "Git", "Github"]
+    ["AWS", "Azure", "Azure DevOps", "Jira", "Confluence", "Notion", "Firebase"],
+    ["Visual Studio", "Visual Studio Code", "VIM", "Photoshop", "Illustrator", "CI/CD", "Git", "Gitlab"]
   ]
 }
